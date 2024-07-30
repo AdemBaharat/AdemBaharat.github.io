@@ -1,0 +1,1252 @@
+{
+    "custName": "MTN_JH_v1",
+    "custNetName": "TEST",
+    "nfmpRelease": "23_11",
+    "nspRelease": "23_11",
+    "servers": [
+        {
+            "cpuVM": 4,
+            "dbName": "deployerNodeProduction",
+            "disasterRecovery": 2,
+            "highAvailability": 1,
+            "highAvailabilityAndDisasterRecovery": 2,
+            "ip": ["10.57.255.111","10.57.255.239"],
+            "minCpuMHz": 2000,
+            "name": "Deployer Node VM1",
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP registry, operating data, and software for Kubernetes installer and NSP deployer",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/opt",
+                    "sizeGB": 275
+                }
+            ],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 8,
+            "requiresSkylake": false,
+            "selectedQuantity": 2,
+            "storageVM": 400,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": true
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpAuxDBServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.33","10.57.255.42","10.57.255.44"],
+            "minCpuMHz": 2000,
+            "name": "NFM-P auxiliary database",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP/NFM-P S/W storage",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/extra",
+                    "sizeGB": 50
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 9,
+                    "ioWriteMBs": 32,
+                    "partitionName": "/opt",
+                    "sizeGB": 100
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 9,
+                    "ioWriteMBs": 32,
+                    "partitionName": "/opt/nsp/nfmp/auxdb/backup",
+                    "sizeGB": 1200
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 9,
+                    "ioWriteMBs": 32,
+                    "partitionName": "/opt/nsp/nfmp/auxdb/data",
+                    "sizeGB": 1000
+                }
+                
+            ],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 128,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },  		
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpDB",
+            "georedundancy": 2,
+            "ip": ["10.57.255.3","10.57.255.19"],
+            "minCpuMHz": 2000,
+            "name": "NFM-P database",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP/NFM-P S/W storage",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/extra",
+                    "sizeGB": 50
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp/nfmp",
+                    "sizeGB": 120
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 300,
+                    "ioWriteMBs": 88,
+                    "partitionName": "/opt/nsp/nfmp/db",
+                    "sizeGB": 625
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 38,
+                    "ioWriteMBs": 66,
+                    "partitionName": "/opt/nsp/nfmp/db/archivelog",
+                    "sizeGB": 570
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 94,
+                    "ioWriteMBs": 50,
+                    "partitionName": "/opt/nsp/nfmp/db/redolog",
+                    "sizeGB": 30
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 69,
+                    "ioWriteMBs": 112,
+                    "partitionName": "/opt/nsp/nfmp/dbbackup",
+                    "sizeGB": 300
+                }
+
+            ],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 64,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.1","10.57.255.17"],
+            "minCpuMHz": 2000,
+            "name": "NFM-P server",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP/NFM-P S/W storage",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/extra",
+                    "sizeGB": 50
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp",
+                    "sizeGB": 150
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 300,
+                    "ioWriteMBs": 88,
+                    "partitionName": "/opt/nsp/nfmp/nebackup",
+                    "sizeGB": 398
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 38,
+                    "ioWriteMBs": 66,
+                    "partitionName": "/opt/nsp/nfmp/server/nms/log",
+                    "sizeGB": 50
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 94,
+                    "ioWriteMBs": 50,
+                    "partitionName": "/opt/nsp/nfmp/server/xml_output",
+                    "sizeGB": 20
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 69,
+                    "ioWriteMBs": 112,
+                    "partitionName": "/opt/nsp/os",
+                    "sizeGB": 140
+                }
+
+            ],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 96,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.4","10.57.255.20"],
+            "minCpuMHz": 2000,
+            "name": "NFM-P statistics auxilary",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP/NFM-P S/W storage",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/extra",
+                    "sizeGB": 50
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp",
+                    "sizeGB": 180
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 300,
+                    "ioWriteMBs": 88,
+                    "partitionName": "/opt/nsp/nfmp/auxserver/nms/log",
+                    "sizeGB": 50
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 38,
+                    "ioWriteMBs": 66,
+                    "partitionName": "/opt/nsp/nfmp/auxserver/xml_output",
+                    "sizeGB": 150
+                }
+            ],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 32,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 8,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.65","10.57.255.67"],
+            "minCpuMHz": 2000,
+            "name": "NSP analytics server",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP/NFM-P S/W storage",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/extra",
+                    "sizeGB": 50
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp",
+                    "sizeGB": 100
+                }
+			],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 24,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.81","10.57.255.82","10.57.255.83","10.57.255.84","10.57.255.85","10.57.255.241","10.57.255.242","10.57.255.243","10.57.255.244","10.57.255.245"],
+            "minCpuMHz": 2000,
+            "name": "NSP Cluster VM",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt",
+                    "sizeGB": 800
+                }
+			],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 64,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 8,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.113","10.57.255.201"],
+            "minCpuMHz": 2000,
+            "name": "NSP Cluster VM (MDM)",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt",
+                    "sizeGB": 100
+                }
+			],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 24,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.112","10.57.255.114","10.57.255.230","10.57.255.202"],
+            "minCpuMHz": 2000,
+            "name": "NSP flow collector",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp",
+                    "sizeGB": 50
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp/flow/fc/data/results",
+                    "sizeGB": 200
+                }
+			],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 64,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 8,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.115","10.57.255.203"],
+            "minCpuMHz": 2000,
+            "name": "NSP flow collector controller",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "Swap space",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "SWAP",
+                    "sizeGB": 16
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp",
+                    "sizeGB": 20
+                },
+				{
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt/nsp/flow/fcc/data/extraction",
+                    "sizeGB": 50
+                }
+			],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 8,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "actualNebackup": 180,
+            "cpuVM": 24,
+            "dbName": "mediumPlusNfmpServer",
+            "georedundancy": 2,
+            "ip": ["10.57.255.110"],
+            "minCpuMHz": 2000,
+            "name": "NSP Simulation Cluster VM",
+            "nebackupWorstCase": 180,
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NFM-P software, operating data",
+                    "ioLatencyMs": 1,
+                    "ioReadMBs": 3,
+                    "ioWriteMBs": 4,
+                    "partitionName": "/opt",
+                    "sizeGB": 700
+                }
+			],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 80,
+            "redundancy": 2,
+            "selectedQuantity": 2,
+            "storageBase": 485,
+            "storageVM": 700,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": false
+        },
+		{
+            "cpuVM": 2,
+            "dbName": "deployerNodeProduction",
+            "disasterRecovery": 2,
+            "highAvailability": 1,
+            "highAvailabilityAndDisasterRecovery": 2,
+            "ip": ["10.57.255.109"],
+            "minCpuMHz": 2000,
+            "name": "Simulation Cluster Deployer Node VM",
+            "partitions": [
+                {
+                    "calculatedSize": false,
+                    "description": "Root",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/",
+                    "sizeGB": 26
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/home",
+                    "sizeGB": 1
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/tmp",
+                    "sizeGB": 4
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var",
+                    "sizeGB": 64
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/var/log/audit",
+                    "sizeGB": 6
+                },
+                {
+                    "calculatedSize": false,
+                    "description": "NSP registry, operating data, and software for Kubernetes installer and NSP deployer",
+                    "ioLatencyMs": -1,
+                    "ioReadMBs": -1,
+                    "ioWriteMBs": -1,
+                    "partitionName": "/opt",
+                    "sizeGB": 275
+                }
+            ],
+            "qcowNeeded": true,
+            "quantity": 1,
+            "ramVM": 4,
+            "requiresSkylake": false,
+            "selectedQuantity": 2,
+            "storageVM": 400,
+            "timezone": "Africa/Johannesburg",
+            "virtualOnly": true
+        }
+	],
+    "toolVersion": "0.16.12"
+}
