@@ -5,46 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adem Baharat | Diyarbakır Doğal Baharat & Kuruyemiş</title>
 <style>
-:root{--o:#f37021;--d:#d95b12;--l:#fff9f5;--t:#2c2c2c;--m:#666;--b:#eee}
+:root{--o:#eab308;--d:#ca8a04;--l:#fefce8;--t:#292524;--m:#57534e;--b:#eee}
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
 body{background:#fff;color:var(--t);line-height:1.6}
-.top{background:var(--o);color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:600}
+.top{background:var(--o);color:#1c1917;text-align:center;padding:8px;font-size:13px;font-weight:700}
 header{background:#fff;border-bottom:1px solid var(--b);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.04)}
 .hm{max-width:1200px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:26px;font-weight:800;color:var(--o);text-decoration:none}
+.logo{font-size:26px;font-weight:800;color:var(--d);text-decoration:none}
 .logo span{color:var(--t);font-weight:400}
 .sb{flex:1;max-width:400px}
 .sb input{width:100%;padding:10px 15px;border:1px solid #ddd;border-radius:25px;outline:none}
-.cbtn{background:var(--l);border:1px solid var(--o);color:var(--o);padding:10px 20px;border-radius:25px;font-weight:600;cursor:pointer}
-.cbtn:hover{background:var(--o);color:#fff}
+.sb input:focus{border-color:var(--o)}
+.cbtn{background:var(--l);border:2px solid var(--o);color:#854d0e;padding:10px 20px;border-radius:25px;font-weight:700;cursor:pointer;transition:.2s}
+.cbtn:hover{background:var(--o);color:#1c1917}
 nav{background:#fafafa;border-top:1px solid var(--b)}
 .nl{max-width:1200px;margin:auto;display:flex;justify-content:center;list-style:none;flex-wrap:wrap}
 .nl a{display:block;padding:12px 18px;text-decoration:none;color:var(--t);font-weight:600;font-size:14px}
-.nl a:hover,.nl a.aktif{color:var(--o);border-bottom:2px solid var(--o)}
-.hero{background:linear-gradient(135deg,#fff3eb,#ffe2d1);padding:45px 20px;text-align:center;border-bottom:1px solid #f5d6c3}
-.hero h1{font-size:32px;margin-bottom:10px}.hero h1 span{color:var(--o)}
+.nl a:hover{color:var(--d);border-bottom:2px solid var(--o)}
+.hero{background:linear-gradient(135deg,#fefce8,#fef08a);padding:45px 20px;text-align:center;border-bottom:1px solid #fde047}
+.hero h1{font-size:32px;margin-bottom:10px}.hero h1 span{color:var(--d)}
 .hero p{color:var(--m);max-width:700px;margin:0 auto 20px}
-.hbtn{background:var(--o);color:#fff;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block}
+.hbtn{background:var(--o);color:#1c1917;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:800;display:inline-block;box-shadow:0 4px 10px rgba(234,179,8,.3)}
+.hbtn:hover{background:var(--d);color:#fff}
 .box{max-width:1200px;margin:auto;padding:35px 20px}
 .st{text-align:center;font-size:24px;margin-bottom:25px}
 .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:40px}
-.cc{background:var(--l);border:1px solid #f5e1d5;border-radius:15px;padding:15px 10px;text-align:center;cursor:pointer;transition:.2s}
-.cc:hover,.cc.secili{border-color:var(--o);background:#ffe9dc}
+.cc{background:var(--l);border:1px solid #fef08a;border-radius:15px;padding:15px 10px;text-align:center;cursor:pointer;transition:.2s}
+.cc:hover{border-color:var(--o);background:#fef9c3;transform:translateY(-3px)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
 .card{border:1px solid var(--b);border-radius:12px;overflow:hidden;background:#fff;text-align:center;padding-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.card:hover{border-color:#fde047}
 .pimg{height:200px;background:#f9f9f9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .pimg img{width:100%;height:100%;object-fit:cover}
-.bdg{position:absolute;top:10px;left:10px;background:var(--o);color:#fff;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:700;z-index:2}
+.bdg{position:absolute;top:10px;left:10px;background:var(--o);color:#1c1917;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:800;z-index:2}
 .pt{font-size:16px;font-weight:700;margin:12px 10px 4px}
 .pw{font-size:13px;color:var(--m);margin-bottom:8px}
 .pp{font-size:19px;font-weight:800;margin-bottom:12px}
-.abtn{width:85%;background:#fff;color:var(--o);border:2px solid var(--o);padding:8px;border-radius:8px;font-weight:700;cursor:pointer}
-.abtn:hover{background:var(--o);color:#fff}
+.abtn{width:85%;background:#fff;color:#854d0e;border:2px solid var(--o);padding:8px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s}
+.abtn:hover{background:var(--o);color:#1c1917}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:200;justify-content:center;align-items:center}
 .mc{background:#fff;width:90%;max-width:420px;border-radius:15px;padding:20px;max-height:80vh;overflow-y:auto}
 .ci{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee}
 .wbtn{width:100%;background:#25D366;color:#fff;border:none;padding:12px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;margin-top:15px}
-footer{background:#222;color:#ccc;text-align:center;padding:30px 20px;margin-top:40px;font-size:14px}
+footer{background:#1c1917;color:#d6d3d1;text-align:center;padding:30px 20px;margin-top:40px;font-size:14px}
 </style>
 </head>
 <body>
@@ -93,7 +96,7 @@ footer{background:#222;color:#ccc;text-align:center;padding:30px 20px;margin-top
 </div>
 
 <footer>
-  <p><strong style="color:#f37021">ADEM BAHARAT</strong> — Kayapınar / Diyarbakır</p>
+  <p><strong style="color:#eab308">ADEM BAHARAT</strong> — Kayapınar / Diyarbakır</p>
   <p style="margin-top:8px;font-size:12px">© 2026 Adem Baharat. Tüm Hakları Saklıdır.</p>
 </footer>
 
@@ -110,27 +113,24 @@ footer{background:#222;color:#ccc;text-align:center;padding:30px 20px;margin-top
 </div>
 
 <script>
-// ÜRÜNLERİNİZİ VE FOTOĞRAF İSİMLERİNİZİ BURADAN DÜZENLEYİN
-// img: "dosyaadi.jpg" kısmına GitHub'a yüklediğiniz fotoğrafın tam adını yazın.
 const urunler=[
-  {id:1, n:"Hakiki Güneşte Kurutulmuş İsot", w:"1 Kg", p:320, c:"baharat", img:"isot.jpg", i:"🌶️", b:"Çok Satan"},
-  {id:2, n:"Kırmızı İpek Pulbiber", w:"1 Kg", p:280, c:"baharat", img:"pulbiber.jpg", i:"🔥", b:"Taze"},
-  {id:3, n:"Yöresel Ekşi Sumak", w:"1 Kg", p:250, c:"baharat", img:"sumak.jpg", i:"🍷", b:""},
-  {id:4, n:"Tane Karabiber", w:"500 gr", p:240, c:"baharat", img:"karabiber.jpg", i:"⚫", b:""},
-  {id:5, n:"Antep Fıstığı (Kavrulmuş)", w:"1 Kg", p:650, c:"kuruyemis", img:"fistik.jpg", i:"🥜", b:"Özel"},
-  {id:6, n:"Taze Kavrulmuş Badem İçi", w:"1 Kg", p:480, c:"kuruyemis", img:"badem.jpg", i:"🌰", b:""},
-  {id:7, n:"Taze Çekilmiş Türk Kahvesi", w:"500 gr", p:220, c:"kahve", img:"kahve.jpg", i:"☕", b:"Taze Çekim"},
-  {id:8, n:"Yöresel Menengiç Kahvesi", w:"500 gr", p:190, c:"kahve", img:"menengic.jpg", i:"🤎", b:"Yöresel"},
-  {id:9, n:"Çifte Kavrulmuş Fıstıklı Lokum", w:"1 Kg", p:340, c:"lokum", img:"lokum.jpg", i:"🍬", b:"Çok Satan"},
-  {id:10, n:"Seylan İthal Çay", w:"1 Kg", p:360, c:"cay", img:"cay.jpg", i:"🍵", b:""},
-  {id:11, n:"Ev Yapımı Domates & Biber Salçası", w:"1 Kg", p:180, c:"diger", img:"salca.jpg", i:"🍅", b:"Doğal"}
+  {id:1, n:"Hakiki Güneşte Kurutulmuş İsot", w:"1 Kg", p:320, c:"baharat", img:"IMG_3517.JPEG", i:"🌶️", b:"Çok Satan"},
+  {id:2, n:"Kırmızı İpek Pulbiber", w:"1 Kg", p:500, c:"baharat", img:"", i:"🔥", b:"Taze"},
+  {id:3, n:"Yöresel Ekşi Sumak", w:"1 Kg", p:250, c:"baharat", img:"", i:"🍷", b:""},
+  {id:4, n:"Tane Karabiber", w:"500 gr", p:240, c:"baharat", img:"", i:"⚫", b:""},
+  {id:5, n:"Antep Fıstığı (Kavrulmuş)", w:"1 Kg", p:650, c:"kuruyemis", img:"", i:"🥜", b:"Özel"},
+  {id:6, n:"Taze Kavrulmuş Badem İçi", w:"1 Kg", p:480, c:"kuruyemis", img:"", i:"🌰", b:""},
+  {id:7, n:"Taze Çekilmiş Türk Kahvesi", w:"500 gr", p:220, c:"kahve", img:"", i:"☕", b:"Taze Çekim"},
+  {id:8, n:"Yöresel Menengiç Kahvesi", w:"500 gr", p:190, c:"kahve", img:"", i:"🤎", b:"Yöresel"},
+  {id:9, n:"Çifte Kavrulmuş Fıstıklı Lokum", w:"1 Kg", p:340, c:"lokum", img:"", i:"🍬", b:"Çok Satan"},
+  {id:10, n:"Seylan İthal Çay", w:"1 Kg", p:360, c:"cay", img:"", i:"🍵", b:""},
+  {id:11, n:"Ev Yapımı Domates & Biber Salçası", w:"1 Kg", p:180, c:"diger", img:"", i:"🍅", b:"Doğal"}
 ];
 
 let sepet=[];
 function ciz(l){
   const g=document.getElementById('list');g.innerHTML='';
   l.forEach(u=>{
-    // Fotoğraf yüklenmişse resmi gösterir, henüz yüklenmemişse otomatik olarak emojiyi gösterir
     const gorsel = u.img ? `<img src="${u.img}" alt="${u.n}" onerror="this.outerHTML='<span style=font-size:54px>${u.i}</span>'">` : `<span style="font-size:54px">${u.i}</span>`;
     g.innerHTML+=`<div class="card"><div class="pimg">${u.b?`<span class="bdg">${u.b}</span>`:''}${gorsel}</div><div class="pt">${u.n}</div><div class="pw">${u.w}</div><div class="pp">₺ ${u.p}</div><button class="abtn" onclick="ekle(${u.id})">SEPETE EKLE</button></div>`;
   });
@@ -150,3 +150,6 @@ function guncelle(){
   const it=document.getElementById('items'),tot=document.getElementById('tot');
   if(!sepet.length){it.innerHTML='<p style="text-align:center;color:#888">Sepetiniz boş.</p>';tot.innerText='0';return}
   let t=0;it.innerHTML='';
+  sepet.forEach((x,idx)=>{t+=x.p;it.innerHTML+=`<div class="ci"><div><b>${x.n}</b><br><small>${x.w} - ${x.p} TL</small></div><button onclick="sil(${idx})" style="color:red;border:none;background:none;cursor:pointer">Sil</button></div>`});
+  tot.innerText=t;
+}
