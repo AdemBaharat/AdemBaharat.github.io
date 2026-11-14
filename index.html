@@ -3,80 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adem Kuruyemiş Baharat | Diyarbakır Doğal Baharat & Kuruyemiş</title>
+<title>Adem Kuruyemiş Baharat | Diyarbakır</title>
 <style>
-:root{--o:#eab308;--d:#ca8a04;--g:#166534;--l:#fefce8;--t:#292524;--m:#57534e;--b:#eee}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
-body{background:#fff;color:var(--t);line-height:1.6}
-.top{background:var(--o);color:#1c1917;text-align:center;padding:8px;font-size:13px;font-weight:700}
-header{background:#fff;border-bottom:1px solid var(--b);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.hm{max-width:1200px;margin:auto;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{display:flex;align-items:center;text-decoration:none}
-.logo img{height:75px;width:auto;max-width:220px;object-fit:contain;border-radius:8px}
-.sb{flex:1;max-width:400px}
-.sb input{width:100%;padding:10px 15px;border:1px solid #ddd;border-radius:25px;outline:none}
-.sb input:focus{border-color:var(--o)}
-.cbtn{background:var(--l);border:2px solid var(--o);color:#854d0e;padding:10px 20px;border-radius:25px;font-weight:700;cursor:pointer;transition:.2s}
-.cbtn:hover{background:var(--o);color:#1c1917}
-nav{background:#fafafa;border-top:1px solid var(--b)}
-.nl{max-width:1200px;margin:auto;display:flex;justify-content:center;list-style:none;flex-wrap:wrap}
-.nl a{display:block;padding:12px 18px;text-decoration:none;color:var(--t);font-weight:600;font-size:14px}
-.nl a:hover{color:var(--d);border-bottom:2px solid var(--o)}
-.hero{background:linear-gradient(135deg,#fefce8,#fef08a);padding:45px 20px;text-align:center;border-bottom:1px solid #fde047}
-.hero h1{font-size:32px;margin-bottom:10px}.hero h1 span{color:var(--g)}
-.hero p{color:var(--m);max-width:700px;margin:0 auto 20px}
-.hbtn{background:var(--o);color:#1c1917;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:800;display:inline-block;box-shadow:0 4px 10px rgba(234,179,8,.3)}
-.hbtn:hover{background:var(--d);color:#fff}
-.box{max-width:1200px;margin:auto;padding:35px 20px}
-.st{text-align:center;font-size:24px;margin-bottom:25px}
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:40px}
-.cc{background:var(--l);border:1px solid #fef08a;border-radius:15px;padding:15px 10px;text-align:center;cursor:pointer;transition:.2s}
-.cc:hover{border-color:var(--o);background:#fef9c3;transform:translateY(-3px)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
-.card{border:1px solid var(--b);border-radius:12px;overflow:hidden;background:#fff;text-align:center;padding-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,.03)}
-.card:hover{border-color:#fde047}
-.pimg{height:200px;background:#f9f9f9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.pimg img{width:100%;height:100%;object-fit:cover}
-.bdg{position:absolute;top:10px;left:10px;background:var(--o);color:#1c1917;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:800;z-index:2}
-.pt{font-size:16px;font-weight:700;margin:12px 10px 4px}
-.pw{font-size:13px;color:var(--m);margin-bottom:8px}
-.pp{font-size:19px;font-weight:800;margin-bottom:12px}
-.abtn{width:85%;background:#fff;color:#854d0e;border:2px solid var(--o);padding:8px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s}
-.abtn:hover{background:var(--o);color:#1c1917}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:200;justify-content:center;align-items:center}
-.mc{background:#fff;width:90%;max-width:420px;border-radius:15px;padding:20px;max-height:80vh;overflow-y:auto}
-.ci{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee}
-.wbtn{width:100%;background:#25D366;color:#fff;border:none;padding:12px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;margin-top:15px}
-footer{background:#1c1917;color:#d6d3d1;text-align:center;padding:30px 20px;margin-top:40px;font-size:14px}
+:root{--sari:#f59e0b;--koyu:#b45309;--acik:#fffbeb;--metin:#1f2937;--gri:#6b7280}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:#fafafa;color:var(--metin)}
+.ust-bant{background:var(--sari);color:#111;text-align:center;padding:8px;font-size:13px;font-weight:700}
+header{background:#fff;border-bottom:2px solid var(--sari);position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.hdr{max-width:1150px;margin:auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--metin);font-weight:900;font-size:22px}
+.logo img{height:65px;width:auto;object-fit:contain}
+.arama{flex:1;max-width:380px}
+.arama input{width:100%;padding:10px 16px;border:2px solid #fde68a;border-radius:30px;outline:none;font-size:14px}
+.arama input:focus{border-color:var(--sari)}
+.sepet-btn{background:var(--sari);color:#111;border:none;padding:10px 22px;border-radius:30px;font-weight:800;cursor:pointer;font-size:14px}
+.sepet-btn:hover{background:var(--koyu);color:#fff}
+.vitrin{background:linear-gradient(120deg,#fef3c7 0%,#fde68a 100%);padding:45px 20px;text-align:center;border-bottom:1px solid #fcd34d}
+.vitrin h1{font-size:30px;margin-bottom:10px;color:#111}
+.vitrin p{color:#4b5563;max-width:650px;margin:0 auto 20px;font-size:15px}
+.vitrin a{background:#111;color:var(--sari);padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block}
+.alan{max-width:1150px;margin:auto;padding:30px 20px}
+.kategoriler{display:flex;gap:10px;overflow-x:auto;padding-bottom:15px;margin-bottom:25px;justify-content:center;flex-wrap:wrap}
+.kat-btn{background:#fff;border:2px solid #fde68a;padding:8px 18px;border-radius:25px;font-weight:700;cursor:pointer;color:var(--metin);font-size:14px}
+.kat-btn:hover,.kat-btn.aktif{background:var(--sari);border-color:var(--sari);color:#111}
+.urun-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.kart{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 12px rgba(0,0,0,.04);display:flex;flex-direction:column;justify-content:space-between}
+.resim{height:190px;background:var(--acik);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.resim img{width:100%;height:100%;object-fit:cover}
+.etiket{position:absolute;top:10px;left:10px;background:var(--sari);color:#111;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px}
+.bilgi{padding:15px;text-align:center}
+.bilgi h3{font-size:16px;margin-bottom:4px}
+.gram{font-size:13px;color:var(--gri);margin-bottom:8px}
+.fiyat{font-size:20px;font-weight:900;color:var(--koyu);margin-bottom:12px}
+.ekle-btn{width:100%;background:var(--acik);border:2px solid var(--sari);color:#111;padding:9px;border-radius:8px;font-weight:800;cursor:pointer}
+.ekle-btn:hover{background:var(--sari)}
+.pencere{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;justify-content:center;align-items:center}
+.kutu{background:#fff;width:90%;max-width:400px;border-radius:16px;padding:20px;max-height:80vh;overflow-y:auto}
+.satir{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee}
+.wp-btn{width:100%;background:#22c55e;color:#fff;border:none;padding:13px;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;margin-top:15px}
+footer{background:#111;color:#9ca3af;text-align:center;padding:25px;margin-top:40px;font-size:13px}
 </style>
 </head>
 <body>
 
-<div class="top">🌶️ DİYARBAKIR'DAN TÜM TÜRKİYE'YE TAZE BAHARAT & KURUYEMİŞ | WHATSAPP SİPARİŞ HATTI</div>
+<div class="ust-bant">🌶️ DİYARBAKIR KAYAPINAR'DAN TÜM TÜRKİYE'YE TAZE BAHARAT & KURUYEMİŞ</div>
 
 <header>
-  <div class="hm">
+  <div class="hdr">
     <a href="#" class="logo">
-      <img src="logo.png" alt="Adem Kuruyemiş Baharat">
+      <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+      <span>ADEM BAHARAT</span>
     </a>
-    <div class="sb"><input type="text" id="q" placeholder="İsot, pul biber, kuruyemiş, kahve ara..." onkeyup="ara()"></div>
-    <button class="cbtn" onclick="ac()">🛒 Sepetim (<span id="cnt">0</span>)</button>
+    <div class="arama"><input type="text" id="araInput" placeholder="İsot, pul biber, kuruyemiş ara..." onkeyup="ara()"></div>
+    <button class="sepet-btn" onclick="sepetAc()">🛒 Sepetim (<span id="sayi">0</span>)</button>
   </div>
-  <nav>
-    <ul class="nl">
-      <li><a href="#urunler" onclick="kat('all','Tüm Ürünlerimiz')">Tümü</a></li>
-      <li><a href="#urunler" onclick="kat('baharat','Baharat Çeşitleri')">Baharat</a></li>
-      <li><a href="#urunler" onclick="kat('kuruyemis','Kuruyemiş Çeşitleri')">Kuruyemiş</a></li>
-      <li><a href="#urunler" onclick="kat('kahve','Kahve Çeşitleri')">Kahve</a></li>
-      <li><a href="#urunler" onclick="kat('lokum','Lokum & Şekerleme')">Lokum</a></li>
-      <li><a href="#urunler" onclick="kat('cay','Çay Çeşitleri')">Çay</a></li>
-      <li><a href="#urunler" onclick="kat('diger','Salça & Yöresel Ürünler')">Salça & Diğer</a></li>
-    </ul>
-  </nav>
 </header>
 
-<section class="hero">
-  <h1>Adem Kuruyemiş Baharat ile <span>Doğal ve Taze</span> Lezzetler</h1>
-  <p>Diyarbakır Kayapınar mağazamızdan en taze baharatlar, çifte kavrulmuş kuruyemişler ve yöresel lezzetler kapınızda.</p>
-  <a href="#urunler" class="hbtn">Ürünleri İncele</a>
+<section class="vitrin">
+  <h1>Geleneksel Lezzet, Günlük Taze Çekim</h1>
+  <p>Hakiki Diyarbakır isotu, kırmızı ipek pul biber, çifte kavrulmuş kuruyemiş ve yöresel lezzetler kapınızda.</p>
+  <a href="#liste">Ürünleri Keşfet</a>
 </section>
+
+<div class="alan">
+  <div class="kategoriler">
+    <button class="kat-btn aktif" onclick="filtre('all',this)">Tümü</button>
+    <button class="kat-btn" onclick="filtre('baharat',this)">🌶️ Baharat</button>
+    <button class="kat-btn" onclick="filtre('kuruyemis',this)">🥜 Kuruyemiş</button>
+    <button class="kat-btn" onclick="filtre('kahve',this)">☕ Kahve</button>
+    <button class="kat-btn" onclick="filtre('lokum',this)">🍬 Lokum</button>
+    <button class="kat-btn" onclick="filtre('cay',this)">🍵 Çay</button>
+    <button class="kat-btn" onclick="filtre('diger',this)">🍅 Salça & Yöresel</button>
+  </div>
+  <div class="urun-grid" id="liste"></div>
+</div>
+
+<footer>
+  <p><strong style="color:#f59e0b">ADEM KURUYEMİŞ BAHARAT</strong> • Kayapınar / Diyarbakır</p>
+</footer>
+
+<div class="pencere" id="modal">
+  <div class="kutu">
+    <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+      <h3>Sepetim</h3>
+      <button onclick="sepetKapat()" style="border:none;background:none;font-size:22px;cursor:pointer">&times;</button>
+    </div>
+    <div id="sepetListe"><p style="text-align:center;color:#888">Sepetiniz şu an boş.</p></div>
+    <div style="margin-top:12px;font-weight:800;text-align:right">Toplam: <span id="toplam">0</span> TL</div>
+    <button class="wp-btn" onclick="siparisVer()">📱 WhatsApp ile Sipariş Ver</button>
+  </div>
+</div>
+
+<script>
+const urunler=[
+  {id:1,ad:"Hakiki Güneşte Kurutulmuş İsot",gr:"1 Kg",fiyat:320,kat:"baharat",resim:"IMG_3517.JPEG",ikon:"🌶️",etiket:"Çok Satan"},
+  {id:2,ad:"Kırmızı İpek Pulbiber",gr:"1 Kg",fiyat:500,kat:"baharat",resim:"",ikon:"🔥",etiket:"Taze"},
+  {id:3,ad:"Yöresel Ekşi Sumak",gr:"1 Kg",fiyat:250,kat:"baharat",resim:"",ikon:"🍷",etiket:""},
+  {id:4,ad:"Tane Karabiber",gr:"500 gr",fiyat:240,kat:"baharat",resim:"",ikon:"⚫",etiket:""},
+  {id:5,ad:"Antep Fıstığı (Kavrulmuş)",gr:"1 Kg",fiyat:650,kat:"kuruyemis",resim:"",ikon:"🥜",etiket:"Özel"},
+  {id:6,ad:"Taze Kavrulmuş Badem İçi",gr:"1 Kg",fiyat:480,kat:"kuruyemis",resim:"",ikon:"🌰",etiket:""},
+  {id:7,ad:"Taze Çekilmiş Türk Kahvesi",gr:"500 gr",fiyat:220,kat:"kahve",resim:"",ikon:"☕",etiket:"Taze"},
+  {id:8,ad:"Yöresel Menengiç Kahvesi",gr:"500 gr",fiyat:190,kat:"kahve",resim:"",ikon:"🤎",etiket:""},
+  {id:9,ad:"Çifte Kavrulmuş Fıstıklı Lokum",gr:"1 Kg",fiyat:340,kat:"lokum",resim:"",ikon:"🍬",etiket:"Çok Satan"},
+  {id:10,ad:"Seylan İthal Çay",gr:"1 Kg",fiyat:360,kat:"cay",resim:"",ikon:"🍵",etiket:""},
+  {id:11,ad:"Ev Yapımı Domates & Biber Salçası",gr:"1 Kg",fiyat:180,kat:"diger",resim:"",ikon:"🍅",etiket:"Doğal"}
+];
+let sepet=[];
+function goster(dizi){
+  const k=document.getElementById('liste');k.innerHTML='';
+  dizi.forEach(u=>{
+    const img=u.resim?`<img src="${u.resim}" onerror="this.outerHTML='<span style=font-size:52px>${u.ikon}</span>'">`:`<span style="font-size:52px">${u.ikon}</span>`;
+    k.innerHTML+=`<div class="kart"><div class="resim">${u.etiket?`<span class="etiket">${u.etiket}</span>`:''}${img}</div><div class="bilgi"><h3>${u.ad}</h3><div class="gram">${u.gr}</div><div class="fiyat">₺ ${u.fiyat}</div><button class="ekle-btn" onclick="ekle(${u.id})">SEPETE EKLE</button></div></div>`;
+  });
+}
+function filtre(k,btn){
+  document.querySelectorAll('.kat-btn').forEach(b=>b.classList.remove('aktif'));
+  if(btn)btn.classList.add('aktif');
+  goster(k==='all'?urunler:urunler.filter(u=>u.kat===k));
+}
+function ara(){
+  const v=document.getElementById('araInput').value.toLowerCase();
+  goster(urunler.filter(u=>u.ad.toLowerCase().includes(v)));
+}
+function ekle(id){const u=urunler.find(x=>x.id===id);sepet.push(u);yenile();alert(u.ad+" sepete eklendi!")}
+function yenile(){
+  document.getElementById('sayi').innerText=sepet.length;
+  const l=document.getElementById('sepetListe'),t=document.getElementById('toplam');
+  if(!sepet.length){l.innerHTML='<p style="text-align:center;color:#888">Sepetiniz şu an boş.</p>';t.innerText='0';return}
+  let top=0;l.innerHTML='';
+  sepet.forEach((x,i)=>{top+=x.fiyat;l.innerHTML+=`<div class="satir"><div><b>${x.ad}</b><br><small>${x.gr} - ${x.fiyat} TL</small></div><button onclick="sil(${i})" style="color:red;border:none;background:none;cursor:pointer">Sil</button></div>`});
+  t.innerText=top;
+}
+function sil(i){sepet.splice(i,1);yenile()}
+function sepetAc(){document.getElementById('modal').style.display='flex'}
+function sepetKapat(){document.getElementById('modal').style.display='none'}
+function siparisVer(){
+  if(!sepet.length)return alert("Önce sepete ürün ekleyin.");
+  const tel="905000000000";
+  let msg="Merhaba Adem Baharat, sipariş vermek istiyorum:%0A%0A",top=0;
+  sepet.forEach(x=>{msg+=`- ${x.ad} (${x.gr}): ${x.fiyat} TL%0A`;top+=x.fiyat});
+  msg+=`%0A*Toplam:* ${top} TL`;
+  window.open(`https://wa.me{tel}?text=${msg}`,'_blank');
+}
+goster(urunler);
+</script>
+</body>
+</html>
