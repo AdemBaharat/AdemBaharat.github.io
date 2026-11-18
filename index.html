@@ -8,6 +8,10 @@
 :root{--p:#2d4c2b;--pd:#1e351d;--a:#d97706;--w:#25D366;--bg:#faf8f5;--t:#1f2937;--b:#e5e7eb}
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,sans-serif}
 body{background:var(--bg);color:var(--t);line-height:1.5}
+.admin-bar{display:none;background:#b45309;color:#fff;padding:10px 16px;text-align:center;font-weight:700;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+body.admin-mode .admin-bar{display:flex}
+.save-site-btn{background:#fff;color:#b45309;border:none;padding:6px 14px;border-radius:20px;font-weight:800;cursor:pointer}
+.exit-admin-btn{background:rgba(0,0,0,.3);color:#fff;border:none;padding:6px 12px;border-radius:20px;cursor:pointer}
 .top{background:var(--pd);color:#fff;padding:8px 16px;font-size:.88rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .top a{background:var(--w);color:#fff;text-decoration:none;padding:5px 14px;border-radius:20px;font-weight:700}
 header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
@@ -23,8 +27,8 @@ header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:
 .scc{position:relative;height:250px;border-radius:12px;overflow:hidden;background:var(--p);color:#fff}
 .scc img{width:100%;height:100%;object-fit:cover}
 .sco{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:16px}
-.up-btn{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.7);color:#fff;border:1px solid rgba(255,255,255,.4);padding:4px 9px;border-radius:15px;font-size:.72rem;cursor:pointer;z-index:5}
-.up-btn:hover{background:#000}
+.up-btn{display:none;position:absolute;top:10px;right:10px;background:#d97706;color:#fff;border:2px solid #fff;padding:5px 10px;border-radius:15px;font-size:.75rem;font-weight:700;cursor:pointer;z-index:5}
+body.admin-mode .up-btn{display:block}
 .cn{max-width:1250px;margin:10px auto 16px;padding:0 16px 6px;display:flex;gap:8px;overflow-x:auto}
 .cbtn{background:#fff;border:1px solid var(--b);padding:8px 16px;border-radius:20px;font-weight:600;cursor:pointer;white-space:nowrap}
 .cbtn.active{background:var(--p);color:#fff}
@@ -53,10 +57,16 @@ header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:
 .wcb{width:100%;background:var(--w);color:#fff;border:none;padding:14px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
 .fwa{position:fixed;bottom:18px;right:18px;background:var(--w);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:90}
 footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-size:.92rem}
+.admin-link{color:rgba(255,255,255,.45);font-size:.78rem;cursor:pointer;display:inline-block;margin-top:15px;text-decoration:underline}
 @media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:190px}}
 </style>
 </head>
 <body>
+<div class="admin-bar">
+<span>🔓 Yönetici Modu Aktif (Şifre: 5896)</span>
+<button class="save-site-btn" onclick="exportSite()">💾 Değişiklikleri Kalıcı Kaydet (Siteyi İndir)</button>
+<button class="exit-admin-btn" onclick="exitAdmin()">Çıkış Yap</button>
+</div>
 <input type="file" id="imgPicker" accept="image/*" style="display:none">
 <div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank">💬 WhatsApp: 0533 138 58 96</a></div>
 <header><div class="hm">
@@ -93,7 +103,15 @@ footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-si
 <button class="wcb" onclick="cwa()">💬 WhatsApp ile Siparişi Tamamla</button>
 </div>
 </div></div>
-  <script>
+<a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
+<footer><div style="max-width:1250px;margin:auto">
+<p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
+<p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 96</p>
+<span class="admin-link" onclick="loginAdmin()">🔒 Yönetici Girişi</span>
+</div></footer>
+<script>
+const ADMIN_PASS = "5896";
+let EMBEDDED_IMGS = {};
 const DEF_IMG={
 "Kahve":"https://unsplash.com",
 "Kaçak Çay":"https://unsplash.com",
@@ -190,17 +208,38 @@ const P=[
 {id:112,c:"Bakliyat",n:"Esmer Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
 {id:109,c:"Bakliyat",n:"Kısırlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]}
 ];
-let sv={},cart=[],ac='Tümü',savedImgs=JSON.parse(localStorage.getItem('adem_imgs')||'{}'),targetKey='';
+let sv={},cart=[],ac='Tümü',savedImgs=Object.assign({},EMBEDDED_IMGS,JSON.parse(localStorage.getItem('adem_imgs')||'{}')),targetKey='';
 P.forEach(p=>sv[p.id]=p.v.length>1?1:0);
 if(savedImgs.banner1)document.getElementById('img-banner1').src=savedImgs.banner1;
 if(savedImgs.banner2)document.getElementById('img-banner2').src=savedImgs.banner2;
-function pickImg(key){targetKey=key;document.getElementById('imgPicker').click()}
+function loginAdmin(){const s=prompt("Yönetici Şifresini Giriniz:");if(s===ADMIN_PASS){document.body.classList.add('admin-mode');window.scrollTo(0,0)}else if(s!==null){alert("Hatalı şifre!")}}
+function exitAdmin(){document.body.classList.remove('admin-mode')}
+function pickImg(key){if(!document.body.classList.contains('admin-mode'))return;targetKey=key;document.getElementById('imgPicker').click()}
 document.getElementById('imgPicker').addEventListener('change',function(e){
 const f=e.target.files[0];if(!f)return;
 const r=new FileReader();
-r.onload=function(ev){savedImgs[targetKey]=ev.target.result;try{localStorage.setItem('adem_imgs',JSON.stringify(savedImgs))}catch(err){}if(targetKey.startsWith('banner')){document.getElementById('img-'+targetKey).src=ev.target.result}else{rp()}};
-r.readAsDataURL(f);
+r.onload=function(ev){
+const img=new Image();
+img.onload=function(){
+const c=document.createElement('canvas'),m=600;let w=img.width,h=img.height;
+if(w>m){h=Math.round(h*m/w);w=m}
+c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);
+const data=c.toDataURL('image/jpeg',0.8);
+savedImgs[targetKey]=data;
+try{localStorage.setItem('adem_imgs',JSON.stringify(savedImgs))}catch(err){}
+if(targetKey.startsWith('banner')){document.getElementById('img-'+targetKey).src=data}else{rp()}
+};img.src=ev.target.result;
+};r.readAsDataURL(f);
 });
+function exportSite(){
+document.body.classList.remove('admin-mode');
+let html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+html=html.replace(/let EMBEDDED_IMGS = \{[\s\S]*?\};/, "let EMBEDDED_IMGS = "+JSON.stringify(savedImgs)+";");
+const a=document.createElement('a');
+a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+a.download='index.html';a.click();
+document.body.classList.add('admin-mode');
+}
 function rp(){
 const g=document.getElementById('pg'),s=document.getElementById('si').value.toLowerCase().trim();
 g.innerHTML='';
@@ -233,9 +272,3 @@ rp();
 </script>
 </body>
 </html>
-
-<a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
-<footer><div style="max-width:1250px;margin:auto">
-<p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
-<p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 96</p>
-</div></footer>
