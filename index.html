@@ -6,61 +6,61 @@
     <title>Adem Baharat | Doğal Yöresel Ürünler</title>
     <style>
         :root{--p:#2d4c2b;--pd:#1e351d;--a:#d97706;--w:#25D366;--bg:#faf8f5;--t:#1f2937;--b:#e5e7eb}
-        *{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
+        *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,sans-serif}
         body{background:var(--bg);color:var(--t);line-height:1.5}
-        .top{background:var(--pd);color:#fff;padding:8px 15px;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-        .top a{background:var(--w);color:#fff;text-decoration:none;padding:4px 12px;border-radius:20px;font-weight:700}
+        .top{background:var(--pd);color:#fff;padding:8px 16px;font-size:.88rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+        .top a{background:var(--w);color:#fff;text-decoration:none;padding:5px 14px;border-radius:20px;font-weight:700}
         header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
-        .hm{max-width:1250px;margin:auto;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-        .logo{font-size:1.3rem;font-weight:800;color:var(--p);text-decoration:none}
+        .hm{max-width:1250px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+        .logo{font-size:1.35rem;font-weight:800;color:var(--p);text-decoration:none}
         .logo small{display:block;font-size:.75rem;color:var(--a)}
-        .sb{flex:1;min-width:220px;max-width:400px}
-        .sb input{width:100%;padding:9px 14px;border:2px solid var(--b);border-radius:20px;outline:none}
+        .sb{flex:1;min-width:220px;max-width:420px}
+        .sb input{width:100%;padding:9px 15px;border:2px solid var(--b);border-radius:22px;outline:none}
         .ha{display:flex;gap:8px}
-        .wab{background:var(--w);color:#fff;text-decoration:none;padding:9px 14px;border-radius:20px;font-weight:700;font-size:.85rem}
-        .cb{background:var(--p);color:#fff;border:none;padding:9px 15px;border-radius:20px;font-weight:700;cursor:pointer}
-        .sc{max-width:1250px;margin:15px auto;padding:0 15px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
+        .wab{background:var(--w);color:#fff;text-decoration:none;padding:9px 15px;border-radius:22px;font-weight:700;font-size:.88rem}
+        .cb{background:var(--p);color:#fff;border:none;padding:9px 16px;border-radius:22px;font-weight:700;cursor:pointer}
+        .sc{max-width:1250px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
         .scc{position:relative;height:240px;border-radius:12px;overflow:hidden;background:var(--p);color:#fff}
         .scc img{width:100%;height:100%;object-fit:cover}
-        .sco{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:15px}
-        .cn{max-width:1250px;margin:10px auto 15px;padding:0 15px 6px;display:flex;gap:8px;overflow-x:auto}
-        .cbtn{background:#fff;border:1px solid var(--b);padding:8px 15px;border-radius:20px;font-weight:600;cursor:pointer;white-space:nowrap}
+        .sco{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:16px}
+        .cn{max-width:1250px;margin:10px auto 16px;padding:0 16px 6px;display:flex;gap:8px;overflow-x:auto}
+        .cbtn{background:#fff;border:1px solid var(--b);padding:8px 16px;border-radius:20px;font-weight:600;cursor:pointer;white-space:nowrap}
         .cbtn.active{background:var(--p);color:#fff}
-        .con{max-width:1250px;margin:0 auto 40px;padding:0 15px}
-        .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px;margin-top:15px}
+        .con{max-width:1250px;margin:0 auto 45px;padding:0 16px}
+        .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:16px;margin-top:16px}
         .pc{background:#fff;border-radius:12px;border:1px solid var(--b);overflow:hidden;display:flex;flex-direction:column;position:relative}
-        .ct{position:absolute;top:8px;left:8px;background:var(--p);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:5px}
-        .fb{position:absolute;top:8px;right:8px;background:var(--a);color:#fff;font-size:.7rem;padding:3px 8px;border-radius:12px;font-weight:700}
-        .pi{height:175px;background:#efeae1}
+        .ct{position:absolute;top:8px;left:8px;background:var(--p);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:5px;z-index:2}
+        .fb{position:absolute;top:8px;right:8px;background:var(--a);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:12px;font-weight:700;z-index:2}
+        .pi{height:180px;background:#efeae1;display:flex;align-items:center;justify-content:center;color:#8c8273;font-weight:700}
         .pi img{width:100%;height:100%;object-fit:cover}
-        .pb{padding:12px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
-        .pt{font-weight:700;margin-bottom:8px;font-size:.98rem}
+        .pb{padding:13px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+        .pt{font-weight:700;margin-bottom:8px;font-size:1rem}
         .vg{display:flex;gap:6px;margin-bottom:10px}
-        .vb{flex:1;padding:6px;border:1px solid var(--b);background:#f9fafb;border-radius:6px;font-size:.8rem;font-weight:600;cursor:pointer}
+        .vb{flex:1;padding:6px;border:1px solid var(--b);background:#f9fafb;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer}
         .vb.sel{border-color:var(--p);background:#eef5ee;color:var(--p)}
-        .pf{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f3f4f6;padding-top:8px}
-        .pr{font-size:1.1rem;font-weight:800;color:var(--p)}
-        .ac{background:var(--a);color:#fff;border:none;padding:7px 12px;border-radius:7px;font-weight:700;cursor:pointer}
-        .co{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;display:none;justify-content:flex-end}
+        .pf{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f3f4f6;padding-top:9px}
+        .pr{font-size:1.15rem;font-weight:800;color:var(--p)}
+        .ac{background:var(--a);color:#fff;border:none;padding:8px 13px;border-radius:7px;font-weight:700;cursor:pointer}
+        .co{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:none;justify-content:flex-end}
         .co.open{display:flex}
-        .cd{background:#fff;width:100%;max-width:390px;height:100%;display:flex;flex-direction:column}
-        .ch{padding:15px;background:var(--p);color:#fff;display:flex;justify-content:space-between;align-items:center}
-        .ci{flex:1;overflow-y:auto;padding:15px}
+        .cd{background:#fff;width:100%;max-width:400px;height:100%;display:flex;flex-direction:column}
+        .ch{padding:16px;background:var(--p);color:#fff;display:flex;justify-content:space-between;align-items:center}
+        .ci{flex:1;overflow-y:auto;padding:16px}
         .cit{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--b)}
-        .cf{padding:15px;border-top:2px solid var(--b);background:#f9fafb}
-        .wcb{width:100%;background:var(--w);color:#fff;border:none;padding:13px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
+        .cf{padding:16px;border-top:2px solid var(--b);background:#f9fafb}
+        .wcb{width:100%;background:var(--w);color:#fff;border:none;padding:14px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
         .fwa{position:fixed;bottom:18px;right:18px;background:var(--w);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:90}
-        footer{background:var(--pd);color:#fff;padding:30px 15px;margin-top:30px;font-size:.9rem}
-        @media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:180px}}
+        footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-size:.92rem}
+        @media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:185px}}
     </style>
 </head>
 <body>
-<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://wa.me" target="_blank">💬 WhatsApp: 0533 138 58 96</a></div>
+<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank">💬 WhatsApp: 0533 138 58 96</a></div>
 <header><div class="hm">
     <a href="#" class="logo">🌿 ADEM BAHARAT<small>Kuruyemiş • Baharat • Yöresel</small></a>
     <div class="sb"><input type="text" id="si" placeholder="Ürün ara..."></div>
     <div class="ha">
-        <a href="https://wa.me" target="_blank" class="wab">💬 0533 138 58 96</a>
+        <a href="https://whatsapp.com" target="_blank" class="wab">💬 0533 138 58 96</a>
         <button class="cb" onclick="tc()">🛒 Sepet (<span id="cc">0</span>)</button>
     </div>
 </div></header>
@@ -90,12 +90,12 @@
         <button class="wcb" onclick="cwa()">💬 WhatsApp ile Siparişi Tamamla</button>
     </div>
 </div></div>
-<a href="https://wa.me" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
+<a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
 <footer><div style="max-width:1250px;margin:auto">
     <p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
     <p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 96</p>
 </div></footer>
-    <script>
+<script>
 const P=[
 {id:29,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi (Paket)",i:"images/damla-sakizli-dibek.jpg",v:[{l:"1 Adet",p:150}]},
 {id:30,c:"Kahve",n:"Diyarbakır Menengiç Kahvesi (Paket)",i:"images/diyarbakir-menengic.jpg",v:[{l:"1 Adet",p:150}]},
@@ -114,79 +114,3 @@ const P=[
 {id:59,c:"Kaçak Çay",n:"Mevlana Çay",i:"images/mevlana-cay.jpg",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
 {id:60,c:"Kaçak Çay",n:"Barut Çay",i:"images/barut-cay.jpg",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
 {id:61,c:"Kaçak Çay",n:"Seylan Çayı",i:"images/seylan-cayi.jpg",v:[{l:"500 gr",p:325},{l:"1 kg",p:650}]},
-{id:36,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (1 Kg)",i:"images/ev-yapimi-nar-eksisi.jpg",v:[{l:"1 Adet (1 Kg)",p:250}]},
-{id:40,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (500 Gr)",i:"images/ev-yapimi-nar-eksisi-500gr.jpg",v:[{l:"1 Adet (500 Gr)",p:200}]},
-{id:41,c:"Nar Ekşisi ve Zeytinyağı",n:"Süzme Zeytinyağı",i:"images/suzme-zeytinyagi.jpg",v:[{l:"Küçük Boy",p:150},{l:"Büyük Boy",p:250}]},
-{id:42,c:"Nar Ekşisi ve Zeytinyağı",n:"Börücek Nar Ekşisi",i:"images/borucek-nar-eksisi.jpg",v:[{l:"1 Adet",p:90}]},
-{id:37,c:"Şire",n:"Kudüs Hurması",i:"images/kudus-hurmasi.jpg",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:38,c:"Şire",n:"Medine Hurması",i:"images/medine-hurmasi.jpg",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:39,c:"Şire",n:"Yaban Mersini",i:"images/yaban-mersini.jpg",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:43,c:"Şire",n:"Çekirdeksiz Siyah Üzüm",i:"images/cekirdeksiz-siyah-uzum.jpg",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:44,c:"Şire",n:"Kuru Erik",i:"images/kuru-erik.jpg",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
-{id:45,c:"Şire",n:"Besni Üzüm",i:"images/besni-uzum.jpg",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:52,c:"Şire",n:"Kuru Elma",i:"images/kuru-elma.jpg",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:53,c:"Şire",n:"Jumbo Sarı Kayısı",i:"images/jumbo-sari-kayisi.jpg",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:54,c:"Şire",n:"Siyah Üzüm",i:"images/siyah-uzum.jpg",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:55,c:"Şire",n:"Salkım Üzüm",i:"images/salkim-uzum.jpg",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:94,c:"Şire",n:"Aydın İnciri",i:"images/aydin-inciri.jpg",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:56,c:"Sucuk Pestil",n:"Lice Cevizli Sucuk",i:"images/lice-cevizli-sucuk.jpg",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
-{id:57,c:"Sucuk Pestil",n:"Mardin Cevizli Sucuk",i:"images/mardin-cevizli-sucuk.jpg",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
-{id:58,c:"Sucuk Pestil",n:"Kef Sucuğu",i:"images/kef-sucugu.jpg",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
-{id:77,c:"Kuruyemiş",f:1,n:"Antep Fıstığı",i:"images/antep-fistigi.jpg",v:[{l:"500 gr",p:700},{l:"1 kg",p:1400}]},
-{id:76,c:"Kuruyemiş",n:"Siirt Fıstığı",i:"images/siirt-fistigi.jpg",v:[{l:"500 gr",p:650},{l:"1 kg",p:1300}]},
-{id:78,c:"Kuruyemiş",n:"Süper Karışım",i:"images/super-karisim.jpg",v:[{l:"500 gr",p:550},{l:"1 kg",p:1100}]},
-{id:74,c:"Kuruyemiş",n:"Fındık",i:"images/findik.jpg",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
-{id:75,c:"Kuruyemiş",n:"Kavrulmuş Kaju",i:"images/kavrulmus-kaju.jpg",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:79,c:"Kuruyemiş",n:"Kavrulmuş Badem",i:"images/kavrulmus-badem.jpg",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:80,c:"Kuruyemiş",n:"Çiğ Badem",i:"images/cig-badem.jpg",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:83,c:"Kuruyemiş",n:"Lüks Karışık",i:"images/luks-karisik.jpg",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:65,c:"Kuruyemiş",n:"Kabak İçi",i:"images/kabak-ici.jpg",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:90,c:"Kuruyemiş",n:"Balkabağı Çekirdeği",i:"images/balkabagi-cekirdegi.jpg",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
-{id:92,c:"Kuruyemiş",n:"Tuzsuz Kavrulmuş Kabak",i:"images/tuzsuz-kavrulmus-kabak.jpg",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
-{id:87,c:"Kuruyemiş",n:"Çiğ Nevşehir Kabağı",i:"images/cig-nevsehir-kabagi.jpg",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
-{id:88,c:"Kuruyemiş",n:"Az Tuzlu Nevşehir Kabağı",i:"images/az-tuzlu-nevsehir-kabagi.jpg",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
-{id:89,c:"Kuruyemiş",n:"Tuzlu Nevşehir Kabağı",i:"images/tuzlu-nevsehir-kabagi.jpg",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
-{id:62,c:"Kuruyemiş",n:"Kabuklu Maraş Cevizi",i:"images/kabuklu-maras-cevizi.jpg",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
-{id:64,c:"Kuruyemiş",n:"Kadın Tırnağı Kabak Çekirdeği",i:"images/kadin-tirnagi-kabak-cekirdegi.jpg",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:71,c:"Kuruyemiş",n:"Tuzlu Yer Fıstığı",i:"images/tuzlu-yer-fistigi.jpg",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:72,c:"Kuruyemiş",n:"Kuru Karpuz Çekirdeği",i:"images/kuru-karpuz-cekirdegi.jpg",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:73,c:"Kuruyemiş",n:"Kavrulmuş Kavun Çekirdeği",i:"images/kavrulmus-kavun-cekirdegi.jpg",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:91,c:"Kuruyemiş",n:"Diyarbakır Kabağı",i:"images/diyarbakir-kabagi.jpg",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:82,c:"Kuruyemiş",n:"Köy Nohutu",i:"images/koy-nohutu.jpg",v:[{l:"500 gr",p:140},{l:"1 kg",p:280}]},
-{id:63,c:"Kuruyemiş",n:"Manisa Cevizi (İnce Kabuk)",i:"images/manisa-cevizi.jpg",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:69,c:"Kuruyemiş",n:"Soslu Fıstık",i:"images/soslu-fistik.jpg",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:70,c:"Kuruyemiş",n:"Soslu Mısır",i:"images/soslu-misir.jpg",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:84,c:"Kuruyemiş",n:"Tuzlu Mardin Leblebisi",i:"images/tuzlu-mardin-leblebisi.jpg",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:85,c:"Kuruyemiş",n:"Özel Tuzlu Leblebi",i:"images/ozel-tuzlu-leblebi.jpg",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:86,c:"Kuruyemiş",n:"Tuzsuz Mardin Leblebisi",i:"images/tuzsuz-mardin-leblebisi.jpg",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:81,c:"Kuruyemiş",n:"Şekerli Nohut",i:"images/sekerli-nohut.jpg",v:[{l:"500 gr",p:120},{l:"1 kg",p:240}]},
-{id:66,c:"Kuruyemiş",n:"Çiğ Dakota Çekirdeği",i:"images/cig-dakota-cekirdegi.jpg",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
-{id:67,c:"Kuruyemiş",n:"Kavrulmuş Tuzsuz Dakota",i:"images/kavrulmus-tuzsuz-dakota.jpg",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
-{id:68,c:"Kuruyemiş",n:"Tuzlu Dakota",i:"images/tuzlu-dakota.jpg",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
-{id:93,c:"Kuruyemiş",n:"Japon Çekirdeği",i:"images/japon-cekirdegi.jpg",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
-{id:96,c:"Salça",n:"Urfa Biber Salçası",i:"images/urfa-biber-salcasi.jpg",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
-{id:98,c:"Salça",n:"Tatlı Biber Salçası",i:"images/tatli-biber-salcasi.jpg",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
-{id:99,c:"Salça",n:"Acı Biber Salçası",i:"images/aci-biber-salcasi.jpg",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
-{id:97,c:"Salça",n:"Hatay Ev Yapımı Domates Salçası",i:"images/hatay-ev-yapimi-domates-salcasi.jpg",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
-{id:110,c:"Bakliyat",n:"Tane Sumak",i:"images/tane-sumak.jpg",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:101,c:"Bakliyat",n:"Konya Fasulyesi",i:"images/konya-fasulyesi.jpg",v:[{l:"500 gr",p:60},{l:"1 kg",p:120}]},
-{id:107,c:"Bakliyat",n:"Kavrulmuş Tel Şehriye",i:"images/kavrulmus-tel-sehriye.jpg",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
-{id:108,c:"Bakliyat",n:"Arpa Şehriye",i:"images/arpa-sehriye.jpg",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
-{id:100,c:"Bakliyat",n:"Şehriyeli Bulgur",i:"images/sehriyeli-bulgur.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:102,c:"Bakliyat",n:"Çorbalık Yarma",i:"images/corbalik-yarma.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:103,c:"Bakliyat",n:"Buğday",i:"images/bugday.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:111,c:"Bakliyat",n:"Yarma ve Dövme",i:"images/yarma-ve-dovme.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:104,c:"Bakliyat",n:"Orta İri Bulgur",i:"images/orta-iri-bulgur.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:105,c:"Bakliyat",n:"En İri Bulgur",i:"images/en-iri-bulgur.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:106,c:"Bakliyat",n:"Orta Pilavlık Bulgur",i:"images/orta-pilavlik-bulgur.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:112,c:"Bakliyat",n:"Esmer Bulgur",i:"images/esmer-bulgur.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:109,c:"Bakliyat",n:"Kısırlık Bulgur",i:"images/kisirlik-bulgur.jpg",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]}
-];
-let sv={},cart=[],ac='Tümü';
-P.forEach(p=>sv[p.id]=p.v.length>1?1:0);
-function rp(){
-const g=document.getElementById('pg'),s=document.getElementById('si').value.toLowerCase().trim();
-g.innerHTML='';
-P.filter(p=>(ac==='Tümü'||(ac==='Favoriler'&&p.f)||p.c===ac)&&(p.n.toLowerCase().includes(s)||p.c.toLowerCase().includes(s))).forEach(p=>{
-
-    
