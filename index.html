@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adem Baharat | Doğal Yöresel Ürünler, Kuruyemiş, Baharat ve Kahve</title>
-    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
             --primary: #2d4c2b;
@@ -33,6 +32,13 @@
             line-height: 1.5;
         }
 
+        .wa-svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
         /* Üst Bilgi Barı */
         .top-bar {
             background-color: var(--primary-dark);
@@ -58,7 +64,7 @@
         .top-bar .wa-badge {
             background-color: var(--whatsapp);
             color: #fff;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             transition: background 0.2s;
         }
@@ -104,7 +110,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
         .logo-text h1 {
@@ -128,7 +134,7 @@
 
         .search-box input {
             width: 100%;
-            padding: 10px 40px 10px 15px;
+            padding: 10px 38px 10px 15px;
             border: 2px solid var(--border);
             border-radius: 25px;
             font-size: 0.95rem;
@@ -140,12 +146,13 @@
             border-color: var(--primary);
         }
 
-        .search-box i {
+        .search-icon {
             position: absolute;
-            right: 15px;
+            right: 14px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
+            font-size: 1rem;
         }
 
         .header-actions {
@@ -184,7 +191,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            position: relative;
             transition: 0.2s;
         }
 
@@ -195,13 +201,13 @@
         .cart-count {
             background-color: var(--accent);
             color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            padding: 2px 7px;
+            padding: 2px 8px;
             border-radius: 50%;
         }
 
-        /* Mağaza Vitrin Banner (Sabit Üst Görseller) */
+        /* Mağaza Vitrin Banner */
         .store-showcase {
             max-width: 1300px;
             margin: 20px auto;
@@ -224,7 +230,7 @@
             border-radius: 12px;
             overflow: hidden;
             height: 290px;
-            background: #eae5dc;
+            background: #2d4c2b;
         }
 
         .showcase-card img {
@@ -239,7 +245,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
             color: #fff;
             padding: 20px;
         }
@@ -251,27 +257,17 @@
 
         .showcase-overlay p {
             font-size: 0.88rem;
-            opacity: 0.9;
+            opacity: 0.92;
         }
 
         /* Kategori Filtreleri */
         .category-nav {
             max-width: 1300px;
             margin: 10px auto 20px;
-            padding: 0 20px;
+            padding: 0 20px 8px;
             display: flex;
             gap: 10px;
             overflow-x: auto;
-            padding-bottom: 8px;
-        }
-
-        .category-nav::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .category-nav::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 4px;
         }
 
         .cat-btn {
@@ -348,14 +344,13 @@
             padding: 4px 10px;
             border-radius: 20px;
             z-index: 2;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         .cat-tag {
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(45, 76, 43, 0.9);
+            background: rgba(45, 76, 43, 0.92);
             color: #fff;
             font-size: 0.72rem;
             font-weight: 600;
@@ -387,3 +382,17 @@
 
         .product-title {
             font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .variant-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .variant-btn {
+            flex: 1;
