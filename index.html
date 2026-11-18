@@ -3,34 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adem Baharat | Doğal Baharat & Yöresel Ürünler</title>
+<title>Adem Baharat | Doğal Yöresel Ürünler</title>
 <style>
 :root{--p:#2d4c2b;--pd:#1e351d;--a:#d97706;--w:#25D366;--bg:#faf8f5;--t:#1f2937;--b:#e5e7eb}
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,sans-serif}
 body{background:var(--bg);color:var(--t);line-height:1.5}
+.admin-bar{display:none;background:#b45309;color:#fff;padding:10px 16px;text-align:center;font-weight:700;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+body.admin-mode .admin-bar{display:flex}
+.save-site-btn{background:#fff;color:#b45309;border:none;padding:6px 14px;border-radius:20px;font-weight:800;cursor:pointer}
+.exit-admin-btn{background:rgba(0,0,0,.3);color:#fff;border:none;padding:6px 12px;border-radius:20px;cursor:pointer}
 .top{background:var(--pd);color:#fff;padding:8px 16px;font-size:.88rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .top a{background:var(--w);color:#fff;text-decoration:none;padding:5px 14px;border-radius:20px;font-weight:700}
 header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
-.hm{max-width:1200px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.hm{max-width:1250px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .logo{font-size:1.35rem;font-weight:800;color:var(--p);text-decoration:none}
 .logo small{display:block;font-size:.75rem;color:var(--a)}
-.sb{flex:1;min-width:200px;max-width:380px}
+.sb{flex:1;min-width:220px;max-width:420px}
 .sb input{width:100%;padding:9px 15px;border:2px solid var(--b);border-radius:22px;outline:none}
 .ha{display:flex;gap:8px}
 .wab{background:var(--w);color:#fff;text-decoration:none;padding:9px 15px;border-radius:22px;font-weight:700;font-size:.88rem}
 .cb{background:var(--p);color:#fff;border:none;padding:9px 16px;border-radius:22px;font-weight:700;cursor:pointer}
-.hero{max-width:1200px;margin:16px auto;padding:0 16px}
-.hero-box{position:relative;height:240px;border-radius:14px;overflow:hidden;background:var(--p);color:#fff}
-.hero-box img{width:100%;height:100%;object-fit:cover}
-.hero-ov{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:20px}
-.cn{max-width:1200px;margin:10px auto 16px;padding:0 16px;display:flex;gap:8px;overflow-x:auto}
+.sc{max-width:1250px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.scc{position:relative;height:250px;border-radius:12px;overflow:hidden;background:var(--p);color:#fff}
+.scc img{width:100%;height:100%;object-fit:cover}
+.sco{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:16px}
+.up-btn{display:none;position:absolute;top:10px;right:10px;background:#d97706;color:#fff;border:2px solid #fff;padding:5px 10px;border-radius:15px;font-size:.75rem;font-weight:700;cursor:pointer;z-index:5}
+body.admin-mode .up-btn{display:block}
+.cn{max-width:1250px;margin:10px auto 16px;padding:0 16px 6px;display:flex;gap:8px;overflow-x:auto}
 .cbtn{background:#fff;border:1px solid var(--b);padding:8px 16px;border-radius:20px;font-weight:600;cursor:pointer;white-space:nowrap}
 .cbtn.active{background:var(--p);color:#fff}
-.con{max-width:1200px;margin:0 auto 45px;padding:0 16px}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:16px}
+.con{max-width:1250px;margin:0 auto 45px;padding:0 16px}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:16px;margin-top:16px}
 .pc{background:#fff;border-radius:12px;border:1px solid var(--b);overflow:hidden;display:flex;flex-direction:column;position:relative}
-.ct{position:absolute;top:8px;left:8px;background:var(--p);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:5px}
-.pi{height:180px;background:#efeae1}
+.ct{position:absolute;top:8px;left:8px;background:var(--p);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:5px;z-index:2}
+.fb{position:absolute;top:36px;left:8px;background:var(--a);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:12px;font-weight:700;z-index:2}
+.pi{height:185px;background:#efeae1;position:relative}
 .pi img{width:100%;height:100%;object-fit:cover;display:block}
 .pb{padding:13px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
 .pt{font-weight:700;margin-bottom:8px;font-size:1rem}
@@ -42,76 +49,205 @@ header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:
 .ac{background:var(--a);color:#fff;border:none;padding:8px 13px;border-radius:7px;font-weight:700;cursor:pointer}
 .co{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:none;justify-content:flex-end}
 .co.open{display:flex}
-.cd{background:#fff;width:100%;max-width:390px;height:100%;display:flex;flex-direction:column}
+.cd{background:#fff;width:100%;max-width:400px;height:100%;display:flex;flex-direction:column}
 .ch{padding:16px;background:var(--p);color:#fff;display:flex;justify-content:space-between;align-items:center}
 .ci{flex:1;overflow-y:auto;padding:16px}
 .cit{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--b)}
 .cf{padding:16px;border-top:2px solid var(--b);background:#f9fafb}
 .wcb{width:100%;background:var(--w);color:#fff;border:none;padding:14px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
 .fwa{position:fixed;bottom:18px;right:18px;background:var(--w);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:90}
-footer{background:var(--pd);color:#fff;padding:30px 16px;margin-top:30px;font-size:.92rem}
+footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-size:.92rem}
+@media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:190px}}
 </style>
 </head>
 <body>
-<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank" rel="noopener">💬 WhatsApp: 0533 138 58 98</a></div>
+<div class="admin-bar">
+<span>🔓 Gizli Yönetici Modu</span>
+<button class="save-site-btn" onclick="exportSite()">💾 Kalıcı Kaydet (Temiz Siteyi İndir)</button>
+<button class="exit-admin-btn" onclick="exitAdmin()">Çıkış</button>
+</div>
+<input type="file" id="imgPicker" accept="image/*" style="display:none">
+<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank">💬 WhatsApp: 0533 138 58 96</a></div>
 <header><div class="hm">
-<a href="#" class="logo">🌿 ADEM BAHARAT<small>Taze Baharat • Şifalı Bitkiler • Yöresel</small></a>
-<div class="sb"><input type="text" id="si" placeholder="Baharat ara (İsot, pul biber, kekik...)"></div>
+<a href="#" class="logo">🌿 ADEM BAHARAT<small>Kuruyemiş • Baharat • Yöresel</small></a>
+<div class="sb"><input type="text" id="si" placeholder="Ürün ara..."></div>
 <div class="ha">
-<a href="https://whatsapp.com" target="_blank" rel="noopener" class="wab">💬 0533 138 58 98</a>
+<a href="https://whatsapp.com" target="_blank" class="wab">💬 0533 138 58 96</a>
 <button class="cb" onclick="tc()">🛒 Sepet (<span id="cc">0</span>)</button>
 </div>
 </div></header>
-<section class="hero"><div class="hero-box">
-<img src="https://unsplash.com" alt="Baharat Çeşitleri">
-<div class="hero-ov"><h2>Taptaze Doğal Baharat Çeşitlerimiz</h2><p>İstediğiniz gramajı seçip sepete ekleyin, tek tıkla WhatsApp üzerinden sipariş verin.</p></div>
-</div></section>
+<section class="sc">
+<div class="scc"><button class="up-btn" onclick="pickImg('banner1')">📷 Fotoğraf Seç</button><img id="img-banner1" src="https://unsplash.com"><div class="sco"><h3>Adem Baharat & Kuruyemiş</h3><p>Taze kuruyemiş, kahve ve yöresel lezzetler</p></div></div>
+<div class="scc"><button class="up-btn" onclick="pickImg('banner2')">📷 Fotoğraf Seç</button><img id="img-banner2" src="https://unsplash.com"><div class="sco"><h3>Zengin Ürün Çeşitlerimiz</h3><p>Sepete ekleyin, WhatsApp'tan sipariş verin</p></div></div>
+</section>
 <nav class="cn">
 <button class="cbtn active" onclick="fc('Tümü',this)">Tümü</button>
-<button class="cbtn" onclick="fc('Kırmızı Biber & İsot',this)">Kırmızı Biber & İsot</button>
-<button class="cbtn" onclick="fc('Klasik Baharatlar',this)">Klasik Baharatlar</button>
-<button class="cbtn" onclick="fc('Bitki & Aktar',this)">Bitki & Aktar</button>
+<button class="cbtn" onclick="fc('Favoriler',this)">⭐ Favoriler</button>
+<button class="cbtn" onclick="fc('Kuruyemiş',this)">Kuruyemiş</button>
+<button class="cbtn" onclick="fc('Kahve',this)">Kahve</button>
+<button class="cbtn" onclick="fc('Kaçak Çay',this)">Kaçak Çay</button>
+<button class="cbtn" onclick="fc('Şire',this)">Şire</button>
+<button class="cbtn" onclick="fc('Sucuk Pestil',this)">Sucuk Pestil</button>
+<button class="cbtn" onclick="fc('Bakliyat',this)">Bakliyat</button>
+<button class="cbtn" onclick="fc('Salça',this)">Salça</button>
+<button class="cbtn" onclick="fc('Nar Ekşisi ve Zeytinyağı',this)">Nar Ekşisi & Zeytinyağı</button>
 </nav>
-<main class="con"><h3 id="ct">Tüm Baharat Çeşitlerimiz</h3><div class="pg" id="pg"></div></main>
+<main class="con"><h3 id="ct">Tüm Ürünlerimiz</h3><div class="pg" id="pg"></div></main>
 <div class="co" id="co" onclick="if(event.target===this)tc()"><div class="cd">
-<div class="ch"><h3>🛒 Sipariş Sepetim</h3><button onclick="tc()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer">&times;</button></div>
+<div class="ch"><h3>🛒 Sepetim</h3><button onclick="tc()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer">&times;</button></div>
 <div class="ci" id="ci"></div>
 <div class="cf">
-<div style="display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;margin-bottom:8px"><span>Toplam Tutar:</span><span id="ctot">0 TL</span></div>
-<textarea id="ca" rows="2" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px" placeholder="Adınız, Soyadınız ve Teslimat Adresiniz..."></textarea>
+<div style="display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;margin-bottom:8px"><span>Toplam:</span><span id="ctot">0 TL</span></div>
+<textarea id="ca" rows="2" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px" placeholder="Adınız ve Adresiniz..."></textarea>
 <button class="wcb" onclick="cwa()">💬 WhatsApp ile Siparişi Tamamla</button>
 </div>
 </div></div>
-<a href="https://whatsapp.com" target="_blank" rel="noopener" class="fwa">💬 WhatsApp Sipariş</a>
-<footer><div style="max-width:1200px;margin:auto">
+<a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
+<footer><div style="max-width:1250px;margin:auto">
 <p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
-<p style="margin-top:8px"><strong>📱 WhatsApp Sipariş Hattı:</strong> 0533 138 58 98</p>
+<p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 96</p>
 </div></footer>
 <script>
+let EMBEDDED_IMGS = {};
+if(new URLSearchParams(window.location.search).get('yonetici')==='5896'){document.body.classList.add('admin-mode')}
+const DEF_IMG={
+"Kahve":"https://unsplash.com",
+"Kaçak Çay":"https://unsplash.com",
+"Nar Ekşisi ve Zeytinyağı":"https://unsplash.com",
+"Şire":"https://unsplash.com",
+"Sucuk Pestil":"https://unsplash.com",
+"Kuruyemiş":"https://unsplash.com",
+"Salça":"https://unsplash.com",
+"Bakliyat":"https://unsplash.com"
+};
 const P=[
-{id:1,c:"Kırmızı Biber & İsot",n:"Hakiki Urfa Ev Yapımı İsot",i:"https://unsplash.com",v:[{l:"250 gr",p:110},{l:"500 gr",p:210},{l:"1 kg",p:400}]},
-{id:2,c:"Kırmızı Biber & İsot",n:"İpek Pul Biber (Acı)",i:"https://unsplash.com",v:[{l:"250 gr",p:95},{l:"500 gr",p:180},{l:"1 kg",p:350}]},
-{id:3,c:"Kırmızı Biber & İsot",n:"Tatlı Toz Kırmızı Biber",i:"https://unsplash.com",v:[{l:"250 gr",p:90},{l:"500 gr",p:170},{l:"1 kg",p:330}]},
-{id:4,c:"Klasik Baharatlar",n:"Taze Çekilmiş Karabiber",i:"https://unsplash.com",v:[{l:"250 gr",p:140},{l:"500 gr",p:270},{l:"1 kg",p:520}]},
-{id:5,c:"Klasik Baharatlar",n:"Yerli Kimyon",i:"https://unsplash.com",v:[{l:"250 gr",p:120},{l:"500 gr",p:230},{l:"1 kg",p:450}]},
-{id:6,c:"Klasik Baharatlar",n:"Ekşi Tane & Öğütülmüş Sumak",i:"https://unsplash.com",v:[{l:"250 gr",p:130},{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:7,c:"Klasik Baharatlar",n:"Hint Zerdeçalı (Toz)",i:"https://unsplash.com",v:[{l:"250 gr",p:85},{l:"500 gr",p:160},{l:"1 kg",p:310}]},
-{id:8,c:"Bitki & Aktar",n:"Dağ Kekiği (Doğal)",i:"https://unsplash.com",v:[{l:"250 gr",p:80},{l:"500 gr",p:150},{l:"1 kg",p:290}]},
-{id:9,c:"Bitki & Aktar",n:"Kuru Nane (Yerli)",i:"https://unsplash.com",v:[{l:"250 gr",p:75},{l:"500 gr",p:140},{l:"1 kg",p:270}]},
-{id:10,c:"Bitki & Aktar",n:"Çubuk Tarçın",i:"https://unsplash.com",v:[{l:"250 gr",p:125},{l:"500 gr",p:240},{l:"1 kg",p:470}]}
+{id:29,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi (Paket)",v:[{l:"1 Adet",p:150}]},
+{id:30,c:"Kahve",n:"Diyarbakır Menengiç Kahvesi (Paket)",v:[{l:"1 Adet",p:150}]},
+{id:31,c:"Kahve",n:"Kürt Kahvesi (Paket)",v:[{l:"1 Adet",p:400}]},
+{id:46,c:"Kahve",n:"Granül Kahve",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:47,c:"Kahve",n:"Fındıklı Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:48,c:"Kahve",n:"Kürt Kahvesi",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:49,c:"Kahve",n:"Menengiç Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:50,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:51,c:"Kahve",n:"Sade Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:95,c:"Kahve",n:"Türk Kahvesi",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:32,c:"Kaçak Çay",n:"Camelon Tea",v:[{l:"1 Adet",p:650}]},
+{id:33,c:"Kaçak Çay",n:"El Zeyna Gold Serisi",v:[{l:"1 Adet",p:650}]},
+{id:34,c:"Kaçak Çay",n:"Istıkan Çay",v:[{l:"1 Adet",p:650}]},
+{id:35,c:"Kaçak Çay",n:"Halep Çay",v:[{l:"1 Adet",p:650}]},
+{id:59,c:"Kaçak Çay",n:"Mevlana Çay",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
+{id:60,c:"Kaçak Çay",n:"Barut Çay",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:61,c:"Kaçak Çay",n:"Seylan Çayı",v:[{l:"500 gr",p:325},{l:"1 kg",p:650}]},
+{id:36,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (1 Kg)",v:[{l:"1 Adet (1 Kg)",p:250}]},
+{id:40,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (500 Gr)",v:[{l:"1 Adet (500 Gr)",p:200}]},
+{id:41,c:"Nar Ekşisi ve Zeytinyağı",n:"Süzme Zeytinyağı",v:[{l:"Küçük Boy",p:150},{l:"Büyük Boy",p:250}]},
+{id:42,c:"Nar Ekşisi ve Zeytinyağı",n:"Börücek Nar Ekşisi",v:[{l:"1 Adet",p:90}]},
+{id:37,c:"Şire",n:"Kudüs Hurması",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:38,c:"Şire",n:"Medine Hurması",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:39,c:"Şire",n:"Yaban Mersini",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:43,c:"Şire",n:"Çekirdeksiz Siyah Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:44,c:"Şire",n:"Kuru Erik",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
+{id:45,c:"Şire",n:"Besni Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:52,c:"Şire",n:"Kuru Elma",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:53,c:"Şire",n:"Jumbo Sarı Kayısı",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:54,c:"Şire",n:"Siyah Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:55,c:"Şire",n:"Salkım Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:94,c:"Şire",n:"Aydın İnciri",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:56,c:"Sucuk Pestil",n:"Lice Cevizli Sucuk",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
+{id:57,c:"Sucuk Pestil",n:"Mardin Cevizli Sucuk",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
+{id:58,c:"Sucuk Pestil",n:"Kef Sucuğu",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
+{id:77,c:"Kuruyemiş",f:1,n:"Antep Fıstığı",v:[{l:"500 gr",p:700},{l:"1 kg",p:1400}]},
+{id:76,c:"Kuruyemiş",n:"Siirt Fıstığı",v:[{l:"500 gr",p:650},{l:"1 kg",p:1300}]},
+{id:78,c:"Kuruyemiş",n:"Süper Karışım",v:[{l:"500 gr",p:550},{l:"1 kg",p:1100}]},
+{id:74,c:"Kuruyemiş",n:"Fındık",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
+{id:75,c:"Kuruyemiş",n:"Kavrulmuş Kaju",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:79,c:"Kuruyemiş",n:"Kavrulmuş Badem",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:80,c:"Kuruyemiş",n:"Çiğ Badem",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:83,c:"Kuruyemiş",n:"Lüks Karışık",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:65,c:"Kuruyemiş",n:"Kabak İçi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:90,c:"Kuruyemiş",n:"Balkabağı Çekirdeği",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
+{id:92,c:"Kuruyemiş",n:"Tuzsuz Kavrulmuş Kabak",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
+{id:87,c:"Kuruyemiş",n:"Çiğ Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
+{id:88,c:"Kuruyemiş",n:"Az Tuzlu Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
+{id:89,c:"Kuruyemiş",n:"Tuzlu Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
+{id:62,c:"Kuruyemiş",n:"Kabuklu Maraş Cevizi",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
+{id:64,c:"Kuruyemiş",n:"Kadın Tırnağı Kabak Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:71,c:"Kuruyemiş",n:"Tuzlu Yer Fıstığı",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:72,c:"Kuruyemiş",n:"Kuru Karpuz Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:73,c:"Kuruyemiş",n:"Kavrulmuş Kavun Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:91,c:"Kuruyemiş",n:"Diyarbakır Kabağı",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:82,c:"Kuruyemiş",n:"Köy Nohutu",v:[{l:"500 gr",p:140},{l:"1 kg",p:280}]},
+{id:63,c:"Kuruyemiş",n:"Manisa Cevizi (İnce Kabuk)",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:69,c:"Kuruyemiş",n:"Soslu Fıstık",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:70,c:"Kuruyemiş",n:"Soslu Mısır",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:84,c:"Kuruyemiş",n:"Tuzlu Mardin Leblebisi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:85,c:"Kuruyemiş",n:"Özel Tuzlu Leblebi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:86,c:"Kuruyemiş",n:"Tuzsuz Mardin Leblebisi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:81,c:"Kuruyemiş",n:"Şekerli Nohut",v:[{l:"500 gr",p:120},{l:"1 kg",p:240}]},
+{id:66,c:"Kuruyemiş",n:"Çiğ Dakota Çekirdeği",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
+{id:67,c:"Kuruyemiş",n:"Kavrulmuş Tuzsuz Dakota",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
+{id:68,c:"Kuruyemiş",n:"Tuzlu Dakota",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
+{id:93,c:"Kuruyemiş",n:"Japon Çekirdeği",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
+{id:96,c:"Salça",n:"Urfa Biber Salçası",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
+{id:98,c:"Salça",n:"Tatlı Biber Salçası",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
+{id:99,c:"Salça",n:"Acı Biber Salçası",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
+{id:97,c:"Salça",n:"Hatay Ev Yapımı Domates Salçası",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
+{id:110,c:"Bakliyat",n:"Tane Sumak",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:101,c:"Bakliyat",n:"Konya Fasulyesi",v:[{l:"500 gr",p:60},{l:"1 kg",p:120}]},
+{id:107,c:"Bakliyat",n:"Kavrulmuş Tel Şehriye",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
+{id:108,c:"Bakliyat",n:"Arpa Şehriye",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
+{id:100,c:"Bakliyat",n:"Şehriyeli Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:102,c:"Bakliyat",n:"Çorbalık Yarma",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:103,c:"Bakliyat",n:"Buğday",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:111,c:"Bakliyat",n:"Yarma ve Dövme",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:104,c:"Bakliyat",n:"Orta İri Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:105,c:"Bakliyat",n:"En İri Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:106,c:"Bakliyat",n:"Orta Pilavlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:112,c:"Bakliyat",n:"Esmer Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:109,c:"Bakliyat",n:"Kısırlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]}
 ];
-let sv={},cart=[],ac='Tümü';
-P.forEach(p=>sv[p.id]=1);
+let sv={},cart=[],ac='Tümü',savedImgs=Object.assign({},EMBEDDED_IMGS,JSON.parse(localStorage.getItem('adem_imgs')||'{}')),targetKey='';
+P.forEach(p=>sv[p.id]=p.v.length>1?1:0);
+if(savedImgs.banner1)document.getElementById('img-banner1').src=savedImgs.banner1;
+if(savedImgs.banner2)document.getElementById('img-banner2').src=savedImgs.banner2;
+function exitAdmin(){document.body.classList.remove('admin-mode');window.history.replaceState({},document.title,window.location.pathname)}
+function pickImg(key){if(!document.body.classList.contains('admin-mode'))return;targetKey=key;document.getElementById('imgPicker').click()}
+document.getElementById('imgPicker').addEventListener('change',function(e){
+const f=e.target.files[0];if(!f)return;
+const r=new FileReader();
+r.onload=function(ev){
+const img=new Image();
+img.onload=function(){
+const c=document.createElement('canvas'),m=600;let w=img.width,h=img.height;
+if(w>m){h=Math.round(h*m/w);w=m}
+c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);
+const data=c.toDataURL('image/jpeg',0.8);
+savedImgs[targetKey]=data;
+try{localStorage.setItem('adem_imgs',JSON.stringify(savedImgs))}catch(err){}
+if(targetKey.startsWith('banner')){document.getElementById('img-'+targetKey).src=data}else{rp()}
+};img.src=ev.target.result;
+};r.readAsDataURL(f);
+});
+function exportSite(){
+document.body.classList.remove('admin-mode');
+let html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+html=html.replace(/let EMBEDDED_IMGS = \{[\s\S]*?\};/, "let EMBEDDED_IMGS = "+JSON.stringify(savedImgs)+";");
+const a=document.createElement('a');
+a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+a.download='index.html';a.click();
+document.body.classList.add('admin-mode');
+}
 function rp(){
 const g=document.getElementById('pg'),s=document.getElementById('si').value.toLowerCase().trim();
 g.innerHTML='';
-P.filter(p=>(ac==='Tümü'||p.c===ac)&&(p.n.toLowerCase().includes(s)||p.c.toLowerCase().includes(s))).forEach(p=>{
+P.filter(p=>(ac==='Tümü'||(ac==='Favoriler'&&p.f)||p.c===ac)&&(p.n.toLowerCase().includes(s)||p.c.toLowerCase().includes(s))).forEach(p=>{
 const vi=sv[p.id]||0,cv=p.v[vi];
+const imgSrc=savedImgs['p'+p.id]||DEF_IMG[p.c];
 const vh=p.v.map((x,i)=>`<button class="vb ${i===vi?'sel':''}" onclick="sv[${p.id}]=${i};rp()">${x.l}</button>`).join('');
-g.innerHTML+=`<div class="pc"><span class="ct">${p.c}</span><div class="pi"><img src="${p.i}" alt="${p.n}"></div><div class="pb"><div><div class="pt">${p.n}</div><div class="vg">${vh}</div></div><div class="pf"><span class="pr">${cv.p} TL</span><button class="ac" onclick="atc(${p.id})">+ Sepete Ekle</button></div></div></div>`;
+g.innerHTML+=`<div class="pc"><span class="ct">${p.c}</span>${p.f?'<span class="fb">⭐ Favori</span>':''}<div class="pi"><button class="up-btn" onclick="pickImg('p${p.id}')">📷 Fotoğraf Seç</button><img src="${imgSrc}"></div><div class="pb"><div><div class="pt">${p.n}</div><div class="vg">${vh}</div></div><div class="pf"><span class="pr">${cv.p} TL</span><button class="ac" onclick="atc(${p.id})">+ Sepete Ekle</button></div></div></div>`;
 });
 }
-function fc(c,b){ac=c;document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('ct').innerText=c==='Tümü'?'Tüm Baharat Çeşitlerimiz':c;rp()}
+function fc(c,b){ac=c;document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('ct').innerText=c==='Tümü'?'Tüm Ürünlerimiz':c;rp()}
 document.getElementById('si').addEventListener('input',rp);
 function atc(id){const p=P.find(x=>x.id===id),v=p.v[sv[id]||0],k=id+'-'+v.l,e=cart.find(x=>x.k===k);e?e.q++:cart.push({k,n:p.n,v:v.l,p:v.p,q:1});uc()}
 function cq(k,d){const i=cart.findIndex(x=>x.k===k);if(i>-1){cart[i].q+=d;if(cart[i].q<=0)cart.splice(i,1)}uc()}
@@ -123,10 +259,10 @@ document.getElementById('ci').innerHTML=cart.length?cart.map(i=>`<div class="cit
 function tc(){document.getElementById('co').classList.toggle('open')}
 function cwa(){
 if(!cart.length)return alert('Sepetiniz boş.');
-let m="Merhaba *ADEM BAHARAT*, baharat siparişi vermek istiyorum:\n\n",t=0;
+let m="Merhaba *ADEM BAHARAT*, sipariş vermek istiyorum:\n\n",t=0;
 cart.forEach((i,x)=>{let st=i.p*i.q;t+=st;m+=`${x+1}. *${i.n}* (${i.v}) x ${i.q} Adet = *${st} TL*\n`});
-m+=`\n*Toplam Tutar: ${t} TL*`;
-const a=document.getElementById('ca').value.trim();if(a)m+=`\n*Adres / Not:* ${a}`;
+m+=`\n*Toplam: ${t} TL*`;
+const a=document.getElementById('ca').value.trim();if(a)m+=`\n*Adres:* ${a}`;
 window.location.href="https://whatsapp.com"+encodeURIComponent(m);
 }
 rp();
