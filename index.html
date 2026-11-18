@@ -93,6 +93,147 @@ footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-si
 <button class="wcb" onclick="cwa()">💬 WhatsApp ile Siparişi Tamamla</button>
 </div>
 </div></div>
+  <script>
+const DEF_IMG={
+"Kahve":"https://unsplash.com",
+"Kaçak Çay":"https://unsplash.com",
+"Nar Ekşisi ve Zeytinyağı":"https://unsplash.com",
+"Şire":"https://unsplash.com",
+"Sucuk Pestil":"https://unsplash.com",
+"Kuruyemiş":"https://unsplash.com",
+"Salça":"https://unsplash.com",
+"Bakliyat":"https://unsplash.com"
+};
+const P=[
+{id:29,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi (Paket)",v:[{l:"1 Adet",p:150}]},
+{id:30,c:"Kahve",n:"Diyarbakır Menengiç Kahvesi (Paket)",v:[{l:"1 Adet",p:150}]},
+{id:31,c:"Kahve",n:"Kürt Kahvesi (Paket)",v:[{l:"1 Adet",p:400}]},
+{id:46,c:"Kahve",n:"Granül Kahve",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:47,c:"Kahve",n:"Fındıklı Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:48,c:"Kahve",n:"Kürt Kahvesi",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:49,c:"Kahve",n:"Menengiç Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:50,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:51,c:"Kahve",n:"Sade Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:95,c:"Kahve",n:"Türk Kahvesi",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:32,c:"Kaçak Çay",n:"Camelon Tea",v:[{l:"1 Adet",p:650}]},
+{id:33,c:"Kaçak Çay",n:"El Zeyna Gold Serisi",v:[{l:"1 Adet",p:650}]},
+{id:34,c:"Kaçak Çay",n:"Istıkan Çay",v:[{l:"1 Adet",p:650}]},
+{id:35,c:"Kaçak Çay",n:"Halep Çay",v:[{l:"1 Adet",p:650}]},
+{id:59,c:"Kaçak Çay",n:"Mevlana Çay",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
+{id:60,c:"Kaçak Çay",n:"Barut Çay",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:61,c:"Kaçak Çay",n:"Seylan Çayı",v:[{l:"500 gr",p:325},{l:"1 kg",p:650}]},
+{id:36,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (1 Kg)",v:[{l:"1 Adet (1 Kg)",p:250}]},
+{id:40,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (500 Gr)",v:[{l:"1 Adet (500 Gr)",p:200}]},
+{id:41,c:"Nar Ekşisi ve Zeytinyağı",n:"Süzme Zeytinyağı",v:[{l:"Küçük Boy",p:150},{l:"Büyük Boy",p:250}]},
+{id:42,c:"Nar Ekşisi ve Zeytinyağı",n:"Börücek Nar Ekşisi",v:[{l:"1 Adet",p:90}]},
+{id:37,c:"Şire",n:"Kudüs Hurması",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:38,c:"Şire",n:"Medine Hurması",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:39,c:"Şire",n:"Yaban Mersini",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:43,c:"Şire",n:"Çekirdeksiz Siyah Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:44,c:"Şire",n:"Kuru Erik",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
+{id:45,c:"Şire",n:"Besni Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:52,c:"Şire",n:"Kuru Elma",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:53,c:"Şire",n:"Jumbo Sarı Kayısı",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
+{id:54,c:"Şire",n:"Siyah Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:55,c:"Şire",n:"Salkım Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:94,c:"Şire",n:"Aydın İnciri",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:56,c:"Sucuk Pestil",n:"Lice Cevizli Sucuk",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
+{id:57,c:"Sucuk Pestil",n:"Mardin Cevizli Sucuk",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
+{id:58,c:"Sucuk Pestil",n:"Kef Sucuğu",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
+{id:77,c:"Kuruyemiş",f:1,n:"Antep Fıstığı",v:[{l:"500 gr",p:700},{l:"1 kg",p:1400}]},
+{id:76,c:"Kuruyemiş",n:"Siirt Fıstığı",v:[{l:"500 gr",p:650},{l:"1 kg",p:1300}]},
+{id:78,c:"Kuruyemiş",n:"Süper Karışım",v:[{l:"500 gr",p:550},{l:"1 kg",p:1100}]},
+{id:74,c:"Kuruyemiş",n:"Fındık",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
+{id:75,c:"Kuruyemiş",n:"Kavrulmuş Kaju",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:79,c:"Kuruyemiş",n:"Kavrulmuş Badem",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:80,c:"Kuruyemiş",n:"Çiğ Badem",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
+{id:83,c:"Kuruyemiş",n:"Lüks Karışık",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
+{id:65,c:"Kuruyemiş",n:"Kabak İçi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:90,c:"Kuruyemiş",n:"Balkabağı Çekirdeği",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
+{id:92,c:"Kuruyemiş",n:"Tuzsuz Kavrulmuş Kabak",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
+{id:87,c:"Kuruyemiş",n:"Çiğ Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
+{id:88,c:"Kuruyemiş",n:"Az Tuzlu Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
+{id:89,c:"Kuruyemiş",n:"Tuzlu Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
+{id:62,c:"Kuruyemiş",n:"Kabuklu Maraş Cevizi",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
+{id:64,c:"Kuruyemiş",n:"Kadın Tırnağı Kabak Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:71,c:"Kuruyemiş",n:"Tuzlu Yer Fıstığı",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:72,c:"Kuruyemiş",n:"Kuru Karpuz Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:73,c:"Kuruyemiş",n:"Kavrulmuş Kavun Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:91,c:"Kuruyemiş",n:"Diyarbakır Kabağı",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
+{id:82,c:"Kuruyemiş",n:"Köy Nohutu",v:[{l:"500 gr",p:140},{l:"1 kg",p:280}]},
+{id:63,c:"Kuruyemiş",n:"Manisa Cevizi (İnce Kabuk)",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:69,c:"Kuruyemiş",n:"Soslu Fıstık",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:70,c:"Kuruyemiş",n:"Soslu Mısır",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:84,c:"Kuruyemiş",n:"Tuzlu Mardin Leblebisi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:85,c:"Kuruyemiş",n:"Özel Tuzlu Leblebi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:86,c:"Kuruyemiş",n:"Tuzsuz Mardin Leblebisi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
+{id:81,c:"Kuruyemiş",n:"Şekerli Nohut",v:[{l:"500 gr",p:120},{l:"1 kg",p:240}]},
+{id:66,c:"Kuruyemiş",n:"Çiğ Dakota Çekirdeği",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
+{id:67,c:"Kuruyemiş",n:"Kavrulmuş Tuzsuz Dakota",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
+{id:68,c:"Kuruyemiş",n:"Tuzlu Dakota",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
+{id:93,c:"Kuruyemiş",n:"Japon Çekirdeği",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
+{id:96,c:"Salça",n:"Urfa Biber Salçası",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
+{id:98,c:"Salça",n:"Tatlı Biber Salçası",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
+{id:99,c:"Salça",n:"Acı Biber Salçası",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
+{id:97,c:"Salça",n:"Hatay Ev Yapımı Domates Salçası",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
+{id:110,c:"Bakliyat",n:"Tane Sumak",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
+{id:101,c:"Bakliyat",n:"Konya Fasulyesi",v:[{l:"500 gr",p:60},{l:"1 kg",p:120}]},
+{id:107,c:"Bakliyat",n:"Kavrulmuş Tel Şehriye",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
+{id:108,c:"Bakliyat",n:"Arpa Şehriye",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
+{id:100,c:"Bakliyat",n:"Şehriyeli Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:102,c:"Bakliyat",n:"Çorbalık Yarma",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:103,c:"Bakliyat",n:"Buğday",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:111,c:"Bakliyat",n:"Yarma ve Dövme",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:104,c:"Bakliyat",n:"Orta İri Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:105,c:"Bakliyat",n:"En İri Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:106,c:"Bakliyat",n:"Orta Pilavlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:112,c:"Bakliyat",n:"Esmer Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
+{id:109,c:"Bakliyat",n:"Kısırlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]}
+];
+let sv={},cart=[],ac='Tümü',savedImgs=JSON.parse(localStorage.getItem('adem_imgs')||'{}'),targetKey='';
+P.forEach(p=>sv[p.id]=p.v.length>1?1:0);
+if(savedImgs.banner1)document.getElementById('img-banner1').src=savedImgs.banner1;
+if(savedImgs.banner2)document.getElementById('img-banner2').src=savedImgs.banner2;
+function pickImg(key){targetKey=key;document.getElementById('imgPicker').click()}
+document.getElementById('imgPicker').addEventListener('change',function(e){
+const f=e.target.files[0];if(!f)return;
+const r=new FileReader();
+r.onload=function(ev){savedImgs[targetKey]=ev.target.result;try{localStorage.setItem('adem_imgs',JSON.stringify(savedImgs))}catch(err){}if(targetKey.startsWith('banner')){document.getElementById('img-'+targetKey).src=ev.target.result}else{rp()}};
+r.readAsDataURL(f);
+});
+function rp(){
+const g=document.getElementById('pg'),s=document.getElementById('si').value.toLowerCase().trim();
+g.innerHTML='';
+P.filter(p=>(ac==='Tümü'||(ac==='Favoriler'&&p.f)||p.c===ac)&&(p.n.toLowerCase().includes(s)||p.c.toLowerCase().includes(s))).forEach(p=>{
+const vi=sv[p.id]||0,cv=p.v[vi];
+const imgSrc=savedImgs['p'+p.id]||DEF_IMG[p.c];
+const vh=p.v.map((x,i)=>`<button class="vb ${i===vi?'sel':''}" onclick="sv[${p.id}]=${i};rp()">${x.l}</button>`).join('');
+g.innerHTML+=`<div class="pc"><span class="ct">${p.c}</span>${p.f?'<span class="fb">⭐ Favori</span>':''}<div class="pi"><button class="up-btn" onclick="pickImg('p${p.id}')">📷 Fotoğraf Seç</button><img src="${imgSrc}"></div><div class="pb"><div><div class="pt">${p.n}</div><div class="vg">${vh}</div></div><div class="pf"><span class="pr">${cv.p} TL</span><button class="ac" onclick="atc(${p.id})">+ Sepete Ekle</button></div></div></div>`;
+});
+}
+function fc(c,b){ac=c;document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('ct').innerText=c==='Tümü'?'Tüm Ürünlerimiz':c;rp()}
+document.getElementById('si').addEventListener('input',rp);
+function atc(id){const p=P.find(x=>x.id===id),v=p.v[sv[id]||0],k=id+'-'+v.l,e=cart.find(x=>x.k===k);e?e.q++:cart.push({k,n:p.n,v:v.l,p:v.p,q:1});uc()}
+function cq(k,d){const i=cart.findIndex(x=>x.k===k);if(i>-1){cart[i].q+=d;if(cart[i].q<=0)cart.splice(i,1)}uc()}
+function uc(){
+document.getElementById('cc').innerText=cart.reduce((s,i)=>s+i.q,0);
+document.getElementById('ctot').innerText=cart.reduce((s,i)=>s+i.p*i.q,0)+' TL';
+document.getElementById('ci').innerHTML=cart.length?cart.map(i=>`<div class="cit"><div><strong>${i.n}</strong><br><small>${i.v} • ${i.p} TL</small></div><div><button onclick="cq('${i.k}',-1)" style="width:26px;height:26px">-</button> <b>${i.q}</b> <button onclick="cq('${i.k}',1)" style="width:26px;height:26px">+</button></div></div>`).join(''):'<p style="text-align:center;color:#888;margin-top:30px">Sepetiniz boş.</p>';
+}
+function tc(){document.getElementById('co').classList.toggle('open')}
+function cwa(){
+if(!cart.length)return alert('Sepetiniz boş.');
+let m="Merhaba *ADEM BAHARAT*, sipariş vermek istiyorum:\n\n",t=0;
+cart.forEach((i,x)=>{let st=i.p*i.q;t+=st;m+=`${x+1}. *${i.n}* (${i.v}) x ${i.q} Adet = *${st} TL*\n`});
+m+=`\n*Toplam: ${t} TL*`;
+const a=document.getElementById('ca').value.trim();if(a)m+=`\n*Adres:* ${a}`;
+window.location.href="https://whatsapp.com"+encodeURIComponent(m);
+}
+rp();
+</script>
+</body>
+</html>
+
 <a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
 <footer><div style="max-width:1250px;margin:auto">
 <p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
