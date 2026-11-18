@@ -8,13 +8,14 @@
 :root{--p:#2d4c2b;--pd:#1e351d;--a:#d97706;--w:#25D366;--bg:#faf8f5;--t:#1f2937;--b:#e5e7eb}
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,sans-serif}
 body{background:var(--bg);color:var(--t);line-height:1.5}
-.admin-bar{display:none;background:#b45309;color:#fff;padding:10px 16px;text-align:center;font-weight:700;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.admin-bar{display:none;background:#b45309;color:#fff;padding:10px 16px;text-align:center;font-weight:700;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:200}
 body.admin-mode .admin-bar{display:flex}
-.save-site-btn{background:#fff;color:#b45309;border:none;padding:6px 14px;border-radius:20px;font-weight:800;cursor:pointer}
-.exit-admin-btn{background:rgba(0,0,0,.3);color:#fff;border:none;padding:6px 12px;border-radius:20px;cursor:pointer}
+.save-site-btn{background:#fff;color:#b45309;border:none;padding:7px 15px;border-radius:20px;font-weight:800;cursor:pointer}
+.exit-admin-btn{background:rgba(0,0,0,.3);color:#fff;border:none;padding:7px 12px;border-radius:20px;cursor:pointer}
 .top{background:var(--pd);color:#fff;padding:8px 16px;font-size:.88rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .top a{background:var(--w);color:#fff;text-decoration:none;padding:5px 14px;border-radius:20px;font-weight:700}
 header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+body.admin-mode header{top:48px}
 .hm{max-width:1250px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .logo{font-size:1.35rem;font-weight:800;color:var(--p);text-decoration:none}
 .logo small{display:block;font-size:.75rem;color:var(--a)}
@@ -62,17 +63,17 @@ footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-si
 </head>
 <body>
 <div class="admin-bar">
-<span>🔓 Gizli Yönetici Modu</span>
+<span>🔓 Yönetici Modu | <span id="imgCounter">Yüklenen: 0 Adet</span></span>
 <button class="save-site-btn" onclick="exportSite()">💾 Kalıcı Kaydet (Temiz Siteyi İndir)</button>
 <button class="exit-admin-btn" onclick="exitAdmin()">Çıkış</button>
 </div>
 <input type="file" id="imgPicker" accept="image/*" style="display:none">
-<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank">💬 WhatsApp: 0533 138 58 96</a></div>
+<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank">💬 WhatsApp: 0533 138 58 98</a></div>
 <header><div class="hm">
 <a href="#" class="logo">🌿 ADEM BAHARAT<small>Kuruyemiş • Baharat • Yöresel</small></a>
 <div class="sb"><input type="text" id="si" placeholder="Ürün ara..."></div>
 <div class="ha">
-<a href="https://whatsapp.com" target="_blank" class="wab">💬 0533 138 58 96</a>
+<a href="https://whatsapp.com" target="_blank" class="wab">💬 0533 138 58 98</a>
 <button class="cb" onclick="tc()">🛒 Sepet (<span id="cc">0</span>)</button>
 </div>
 </div></header>
@@ -105,7 +106,7 @@ footer{background:var(--pd);color:#fff;padding:32px 16px;margin-top:30px;font-si
 <a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
 <footer><div style="max-width:1250px;margin:auto">
 <p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
-<p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 96</p>
+<p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 98</p>
 </div></footer>
 <script>
 let EMBEDDED_IMGS = {};
@@ -206,36 +207,41 @@ const P=[
 {id:112,c:"Bakliyat",n:"Esmer Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
 {id:109,c:"Bakliyat",n:"Kısırlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]}
 ];
-let sv={},cart=[],ac='Tümü',savedImgs=Object.assign({},EMBEDDED_IMGS,JSON.parse(localStorage.getItem('adem_imgs')||'{}')),targetKey='';
+let sv={},cart=[],ac='Tümü',savedImgs=Object.assign({},EMBEDDED_IMGS),targetKey='';
 P.forEach(p=>sv[p.id]=p.v.length>1?1:0);
+function updateCounter(){document.getElementById('imgCounter').innerText='Yüklenen: '+Object.keys(savedImgs).length+' Adet'}
 if(savedImgs.banner1)document.getElementById('img-banner1').src=savedImgs.banner1;
 if(savedImgs.banner2)document.getElementById('img-banner2').src=savedImgs.banner2;
+updateCounter();
 function exitAdmin(){document.body.classList.remove('admin-mode');window.history.replaceState({},document.title,window.location.pathname)}
-function pickImg(key){if(!document.body.classList.contains('admin-mode'))return;targetKey=key;document.getElementById('imgPicker').click()}
+function pickImg(key){if(!document.body.classList.contains('admin-mode'))return;targetKey=key;document.getElementById('imgPicker').value='';document.getElementById('imgPicker').click()}
 document.getElementById('imgPicker').addEventListener('change',function(e){
 const f=e.target.files[0];if(!f)return;
 const r=new FileReader();
 r.onload=function(ev){
 const img=new Image();
 img.onload=function(){
-const c=document.createElement('canvas'),m=600;let w=img.width,h=img.height;
+const c=document.createElement('canvas'),m=350;let w=img.width,h=img.height;
 if(w>m){h=Math.round(h*m/w);w=m}
 c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);
-const data=c.toDataURL('image/jpeg',0.8);
+const data=c.toDataURL('image/jpeg',0.65);
 savedImgs[targetKey]=data;
-try{localStorage.setItem('adem_imgs',JSON.stringify(savedImgs))}catch(err){}
+updateCounter();
 if(targetKey.startsWith('banner')){document.getElementById('img-'+targetKey).src=data}else{rp()}
 };img.src=ev.target.result;
 };r.readAsDataURL(f);
 });
 function exportSite(){
 document.body.classList.remove('admin-mode');
+document.getElementById('pg').innerHTML='';
+document.getElementById('ci').innerHTML='';
 let html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
 html=html.replace(/let EMBEDDED_IMGS = \{[\s\S]*?\};/, "let EMBEDDED_IMGS = "+JSON.stringify(savedImgs)+";");
 const a=document.createElement('a');
 a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
 a.download='index.html';a.click();
 document.body.classList.add('admin-mode');
+rp();
 }
 function rp(){
 const g=document.getElementById('pg'),s=document.getElementById('si').value.toLowerCase().trim();
