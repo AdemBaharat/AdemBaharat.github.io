@@ -64,8 +64,8 @@ footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-si
 </head>
 <body>
 <div class="admin-bar">
-  <span>🔓 HD Yönetici Modu | <span id="imgCounter">Yüklenen: 0</span></span>
-  <button class="save-site-btn" onclick="exportSite()">💾 Kalıcı Kaydet (HD İndir)</button>
+  <span>🔓 Yönetici Modu | <span id="imgCounter">Yüklenen: 0</span></span>
+  <button class="save-site-btn" onclick="exportSite()">💾 Kalıcı Kaydet (İndir)</button>
   <button class="exit-admin-btn" onclick="exitAdmin()">Çıkış</button>
 </div>
 <input type="file" id="imgPicker" accept="image/*" style="display:none">
@@ -87,12 +87,12 @@ footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-si
 
 <section class="sc">
   <div class="scc">
-    <button class="up-btn" onclick="pickImg('banner1')">📷 HD Fotoğraf Seç</button>
+    <button class="up-btn" onclick="pickImg('banner1')">📷 Fotoğraf Seç</button>
     <img id="img-banner1" alt="">
     <div class="sco"><h3>Adem Baharat & Kuruyemiş</h3><p>Taze kuruyemiş, kahve ve yöresel lezzetler</p></div>
   </div>
   <div class="scc">
-    <button class="up-btn" onclick="pickImg('banner2')">📷 HD Fotoğraf Seç</button>
+    <button class="up-btn" onclick="pickImg('banner2')">📷 Fotoğraf Seç</button>
     <img id="img-banner2" alt="">
     <div class="sco"><h3>Zengin Ürün Çeşitlerimiz</h3><p>Sepete ekleyin, WhatsApp'tan sipariş verin</p></div>
   </div>
@@ -112,7 +112,7 @@ footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-si
 </nav>
 
 <main class="con">
-  <h3 id="ct">Tüm Ürünlerimiz</h3>
+  <h3 id="ct">Tüm Ürünlerimiz (98)</h3>
   <div class="pg" id="pg"></div>
 </main>
 
@@ -273,7 +273,7 @@ function render() {
     return `
       <div class="pc">
         <span class="ct">${p.cat}</span>
-        <button class="up-btn" onclick="pickImg('prod-${p.id}')">📷 HD Fotoğraf</button>
+        <button class="up-btn" onclick="pickImg('prod-${p.id}')">📷 Fotoğraf Seç</button>
         <div class="pi">
           ${p.img ? `<img id="img-prod-${p.id}" src="${p.img}">` : `<span style="font-size:2.2rem;opacity:.3">🌿</span>`}
         </div>
@@ -303,7 +303,6 @@ function fc(cat, btn) {
   render();
 }
 
-// Arama kutusuna musting2147 yazıldığında HD Yönetici Modunu açar
 document.getElementById("si").addEventListener("input", function(e) {
   if (e.target.value.trim().toLowerCase() === "musting2147") {
     document.body.classList.add("admin-mode");
@@ -350,32 +349,35 @@ function sendWA() {
 
 function pickImg(target) {
   activeImgTarget = target;
-  document.getElementById("imgPicker").click();
+  const picker = document.getElementById("imgPicker");
+  picker.value = "";
+  picker.click();
 }
 
+// 25 MB sınırına takılmaması için fotoğrafları netliğini bozmadan hafif boyutta (450px / banner 900px) işler
 document.getElementById("imgPicker").addEventListener("change", function(e) {
-  const file = e.target.files;
+  const file = e.target.files[0];
   if (!file || !activeImgTarget) return;
   const reader = new FileReader();
   reader.onload = function(ev) {
     const img = new Image();
     img.onload = function() {
       const canvas = document.createElement("canvas");
-            const maxW = 600; // Ürün kartları için ideal HD genişlik
+      const maxW = activeImgTarget.startsWith("prod-") ? 450 : 900;
       let w = img.width, h = img.height;
       if (w > maxW) { h = Math.round(h * (maxW / w)); w = maxW; }
       canvas.width = w; canvas.height = h;
       canvas.getContext("2d").drawImage(img, 0, 0, w, h);
-      const hdData = canvas.toDataURL("image/jpeg", 0.78);
+      const optData = canvas.toDataURL("image/jpeg", 0.72);
 
       if (activeImgTarget.startsWith("prod-")) {
         const id = parseInt(activeImgTarget.replace("prod-", ""));
         const p = products.find(x => x.id === id);
-        if (p) p.img = hdData;
+        if (p) p.img = optData;
         render();
       } else {
         const el = document.getElementById("img-" + activeImgTarget);
-        if (el) el.src = hdData;
+        if (el) el.src = optData;
       }
       const c = document.getElementById("imgCounter");
       c.textContent = "Yüklenen: " + (parseInt(c.textContent.replace(/\D/g, "")) + 1);
@@ -388,7 +390,7 @@ document.getElementById("imgPicker").addEventListener("change", function(e) {
 function exportSite() {
   document.body.classList.remove("admin-mode");
   const scriptTag = document.querySelector("script");
-  const updatedList = "const products = " + JSON.stringify(products, null, 2) + ";";
+  const updatedList = "const products = " + JSON.stringify(products) + ";";
   scriptTag.textContent = scriptTag.textContent.replace(/const products = \[[\s\S]*?\];/, updatedList);
   const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
   const blob = new Blob([html], { type: "text/html;charset=utf-8" });
