@@ -354,7 +354,7 @@ function pickImg(target) {
 }
 
 document.getElementById("imgPicker").addEventListener("change", function(e) {
-  const file = e.target.files;
+    const file = e.target.files[0];
   if (!file || !activeImgTarget) return;
   const reader = new FileReader();
   reader.onload = function(ev) {
