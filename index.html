@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -39,7 +38,6 @@ body.admin-mode .up-btn{display:block}
 @media(min-width:600px){.pg{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:16px}}
 .pc{background:#fff;border-radius:12px;border:1px solid var(--b);overflow:hidden;display:flex;flex-direction:column;position:relative}
 .ct{position:absolute;top:6px;left:6px;background:var(--p);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:5px;z-index:2}
-.fb{position:absolute;top:30px;left:6px;background:var(--a);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:10px;font-weight:700;z-index:2}
 .pi{height:175px;background:#efeae1;position:relative;display:flex;align-items:center;justify-content:center}
 @media(min-width:600px){.pi{height:195px}}
 .pi img{width:100%;height:100%;object-fit:cover;display:block}
@@ -60,7 +58,7 @@ body.admin-mode .up-btn{display:block}
 .cf{padding:15px;border-top:2px solid var(--b);background:#f9fafb}
 .wcb{width:100%;background:var(--w);color:#fff;border:none;padding:13px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
 .fwa{position:fixed;bottom:16px;right:16px;background:var(--w);color:#fff;padding:11px 16px;border-radius:30px;text-decoration:none;font-weight:800;font-size:.9rem;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:90}
-footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-size:.88rem;text-align:center}
+footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-size:.9rem;text-align:center;line-height:1.6}
 @media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:185px}}
 </style>
 </head>
@@ -74,7 +72,7 @@ footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-si
 
 <div class="top">
   <span>🌿 Adem Baharat - Diyarbakır</span>
-  <a href="https://wa.me" target="_blank">💬 0533 138 58 98</a>
+  <a href="https://wa.me." target="_blank">💬 WhatsApp: 0533 138 58 98</a>
 </div>
 
 <header>
@@ -102,15 +100,14 @@ footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-si
 
 <nav class="cn">
   <button class="cbtn active" onclick="fc('Tümü',this)">Tümü</button>
-  <button class="cbtn" onclick="fc('Favoriler',this)">⭐ Favoriler</button>
-  <button class="cbtn" onclick="fc('Kuruyemiş',this)">Kuruyemiş</button>
-  <button class="cbtn" onclick="fc('Kahve',this)">Kahve</button>
+  <button class="cbtn" onclick="fc('Çerez',this)">Çerez</button>
+  <button class="cbtn" onclick="fc('Bakliyat',this)">Bakliyat</button>
   <button class="cbtn" onclick="fc('Kaçak Çay',this)">Kaçak Çay</button>
+  <button class="cbtn" onclick="fc('Salça',this)">Salça</button>
+  <button class="cbtn" onclick="fc('Sucuk Pestil',this)">Sucuk Pestil</button>
   <button class="cbtn" onclick="fc('Şire',this)">Şire</button>
   <button class="cbtn" onclick="fc('Kurutma',this)">Kurutma</button>
-  <button class="cbtn" onclick="fc('Sucuk Pestil',this)">Sucuk Pestil</button>
-  <button class="cbtn" onclick="fc('Bakliyat',this)">Bakliyat</button>
-  <button class="cbtn" onclick="fc('Salça',this)">Salça</button>
+  <button class="cbtn" onclick="fc('Kahve',this)">Kahve</button>
   <button class="cbtn" onclick="fc('Nar Ekşisi ve Zeytinyağı',this)">Nar Ekşisi & Zeytinyağı</button>
 </nav>
 
@@ -135,45 +132,147 @@ footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-si
   </div>
 </div>
 
-<a href="https://wa.me" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
+<a href="https://wa.me." target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
 
 <footer>
-  <p style="font-weight:800;font-size:1.05rem;margin-bottom:6px">🌿 ADEM BAHARAT</p>
+  <p style="font-weight:800;font-size:1.1rem;margin-bottom:6px">🌿 ADEM BAHARAT</p>
   <p><strong>📍 Adres:</strong> PEYAS MAHALLESİ 215. SOKAK ESKİ NİL KOLEJİ KARŞISI ADEM BAHARAT</p>
-  <p style="margin-top:6px"><strong>📱 WhatsApp:</strong> 0533 138 58 98</p>
+  <p style="margin-top:6px"><strong>📱 WhatsApp Sipariş Hattı:</strong> 0533 138 58 98</p>
 </footer>
 <script>
-// Kendi ürünlerinizi ve fiyatlarınızı aşağıdaki listeye ekleyebilirsiniz (Kurutma kategorisi ve 4 ürünü hazır eklendi)
 const products = [
-  { id: 1, name: "Kurutmalık Dolmalık Patlıcan (1 Dizi)", cat: "Kurutma", price: 250, gramli: false, fav: true, img: "" },
-  { id: 2, name: "Kurutmalık Dolmalık Biber (1 Dizi)", cat: "Kurutma", price: 250, gramli: false, fav: true, img: "" },
-  { id: 3, name: "Kurutmalık Kabak (1 Dizi)", cat: "Kurutma", price: 300, gramli: false, fav: false, img: "" },
-  { id: 4, name: "Kurutmalık Acur (1 Dizi)", cat: "Kurutma", price: 250, gramli: false, fav: false, img: "" },
-  { id: 5, name: "Kavrulmuş Antep Fıstığı", cat: "Kuruyemiş", price: 1400, gramli: true, fav: true, img: "" },
-  { id: 6, name: "Özel Karışık Kuruyemiş", cat: "Kuruyemiş", price: 1100, gramli: true, fav: true, img: "" },
-  { id: 7, name: "Osmaniye Dibek Kahvesi", cat: "Kahve", price: 240, gramli: true, fav: false, img: "" },
-  { id: 8, name: "Seylan Kaçak Çay", cat: "Kaçak Çay", price: 320, gramli: true, fav: true, img: "" },
-  { id: 9, name: "Cevizli Sucuk", cat: "Sucuk Pestil", price: 280, gramli: true, fav: false, img: "" },
-  { id: 10, name: "Ev Yapımı Domates Salçası (1 Kg)", cat: "Salça", price: 150, gramli: false, fav: false, img: "" }
-];
+  // ÇEREZ (34 Ürün - 500 Gr ve 1 Kg)
+  { id: 1, name: "Maraş Cevizi", cat: "Çerez", price: 350, gramli: true, img: "" },
+  { id: 2, name: "Manisa Cevizi", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 3, name: "Kuru Karpuz Çekirdeği", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 4, name: "Kavun Çekirdeği", cat: "Çerez", price: 300, gramli: true, img: "" },
+  { id: 5, name: "Keçiboynuzu", cat: "Çerez", price: 300, gramli: true, img: "" },
+  { id: 6, name: "Yer Fıstığı", cat: "Çerez", price: 300, gramli: true, img: "" },
+  { id: 7, name: "Soslu Mısır", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 8, name: "Soslu Fıstık", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 9, name: "Çiğ Dakota", cat: "Çerez", price: 200, gramli: true, img: "" },
+  { id: 10, name: "Tuzsuz Dakota", cat: "Çerez", price: 200, gramli: true, img: "" },
+  { id: 11, name: "Dakota Tuzlu", cat: "Çerez", price: 200, gramli: true, img: "" },
+  { id: 12, name: "Japon Çekirdeği", cat: "Çerez", price: 120, gramli: true, img: "" },
+  { id: 13, name: "Kabak İçi", cat: "Çerez", price: 500, gramli: true, img: "" },
+  { id: 14, name: "Tarzan Kabak", cat: "Çerez", price: 300, gramli: true, img: "" },
+  { id: 15, name: "Tuzsuz Kabak", cat: "Çerez", price: 300, gramli: true, img: "" },
+  { id: 16, name: "Diyarbakır Kabağı", cat: "Çerez", price: 300, gramli: true, img: "" },
+  { id: 17, name: "Bal Kabağı", cat: "Çerez", price: 450, gramli: true, img: "" },
+  { id: 18, name: "Çiğ Nevşehir Kabağı", cat: "Çerez", price: 450, gramli: true, img: "" },
+  { id: 19, name: "Az Tuzlu Nevşehir Kabağı", cat: "Çerez", price: 450, gramli: true, img: "" },
+  { id: 20, name: "Nevşehir Tuzlu Kabak", cat: "Çerez", price: 450, gramli: true, img: "" },
+  { id: 21, name: "Tuzsuz Leblebi", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 22, name: "Özel Tuzlu Leblebi", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 23, name: "Mardin Leblebisi", cat: "Çerez", price: 250, gramli: true, img: "" },
+  { id: 24, name: "Şekerli Leblebi", cat: "Çerez", price: 240, gramli: true, img: "" },
+  { id: 25, name: "Köy Nohutu", cat: "Çerez", price: 280, gramli: true, img: "" },
+  { id: 26, name: "Lüks Karışım", cat: "Çerez", price: 600, gramli: true, img: "" },
+  { id: 27, name: "Çiğ Badem", cat: "Çerez", price: 900, gramli: true, img: "" },
+  { id: 28, name: "Kavrulmuş Badem", cat: "Çerez", price: 900, gramli: true, img: "" },
+  { id: 29, name: "Süper Karışım", cat: "Çerez", price: 1100, gramli: true, img: "" },
+  { id: 30, name: "Ceviz İçi", cat: "Çerez", price: 750, gramli: true, img: "" },
+  { id: 31, name: "Siirt Fıstığı", cat: "Çerez", price: 1300, gramli: true, img: "" },
+  { id: 32, name: "Antep Fıstığı", cat: "Çerez", price: 1400, gramli: true, img: "" },
+  { id: 33, name: "Kaju", cat: "Çerez", price: 900, gramli: true, img: "" },
+  { id: 34, name: "Fındık", cat: "Çerez", price: 1000, gramli: true, img: "" },
 
+  // BAKLİYAT (18 Ürün - 500 Gr ve 1 Kg)
+  { id: 35, name: "Tane Sumak", cat: "Bakliyat", price: 500, gramli: true, img: "" },
+  { id: 36, name: "Baldo Pirinç", cat: "Bakliyat", price: 120, gramli: true, img: "" },
+  { id: 37, name: "Karacadağ Pirinci", cat: "Bakliyat", price: 150, gramli: true, img: "" },
+  { id: 38, name: "Konya Fasulyesi", cat: "Bakliyat", price: 140, gramli: true, img: "" },
+  { id: 39, name: "Mercimek", cat: "Bakliyat", price: 110, gramli: true, img: "" },
+  { id: 40, name: "Yeni Nohut", cat: "Bakliyat", price: 85, gramli: true, img: "" },
+  { id: 41, name: "İnce Köftelik Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 42, name: "İçli Köftelik Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 43, name: "Esmer Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 44, name: "Kısırlık Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 45, name: "Pilavlık Midyat Orta Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 46, name: "Arpa Şehriye", cat: "Bakliyat", price: 70, gramli: true, img: "" },
+  { id: 47, name: "Şehriyeli Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 48, name: "En İri Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 49, name: "Orta Pilavlık Bulgur", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 50, name: "Dövme", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 51, name: "Buğday", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+  { id: 52, name: "Dövme Kırığı", cat: "Bakliyat", price: 50, gramli: true, img: "" },
+
+  // KAÇAK ÇAY (9 Ürün - İlk 3 gramajlı, diğerleri kutu/adet)
+  { id: 53, name: "Seylan Çay", cat: "Kaçak Çay", price: 700, gramli: true, img: "" },
+  { id: 54, name: "Barut Çayı", cat: "Kaçak Çay", price: 500, gramli: true, img: "" },
+  { id: 55, name: "Mevlana Çay", cat: "Kaçak Çay", price: 750, gramli: true, img: "" },
+  { id: 56, name: "İstikan Kutu", cat: "Kaçak Çay", price: 750, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 57, name: "Elzeyna Gold Serisi", cat: "Kaçak Çay", price: 700, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 58, name: "Halep Çay", cat: "Kaçak Çay", price: 700, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 59, name: "Camelon Çay", cat: "Kaçak Çay", price: 709, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 60, name: "Alwazah Tea", cat: "Kaçak Çay", price: 300, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 61, name: "Do Ghazal Tea", cat: "Kaçak Çay", price: 300, gramli: false, unit: "Kutu / Adet", img: "" },
+
+  // SALÇA (4 Ürün - 500 Gr ve 1 Kg)
+  { id: 62, name: "Hatay Acı Salça", cat: "Salça", price: 170, gramli: true, img: "" },
+  { id: 63, name: "Hatay Tatlı Salça", cat: "Salça", price: 170, gramli: true, img: "" },
+  { id: 64, name: "Urfa Biber Salçası", cat: "Salça", price: 350, gramli: true, img: "" },
+  { id: 65, name: "Hatay Domates Salçası", cat: "Salça", price: 150, gramli: true, img: "" },
+
+  // SUCUK PESTİL (4 Ürün - 500 Gr ve 1 Kg)
+  { id: 66, name: "Mardin Sucuk", cat: "Sucuk Pestil", price: 750, gramli: true, img: "" },
+  { id: 67, name: "Lice Sucuk", cat: "Sucuk Pestil", price: 750, gramli: true, img: "" },
+  { id: 68, name: "Kehf Sucuğu", cat: "Sucuk Pestil", price: 1000, gramli: true, img: "" },
+  { id: 69, name: "Çermik Pestili", cat: "Sucuk Pestil", price: 600, gramli: true, img: "" },
+
+  // ŞİRE (11 Ürün - 500 Gr ve 1 Kg)
+  { id: 70, name: "Duble Sarı Kayısı", cat: "Şire", price: 700, gramli: true, img: "" },
+  { id: 71, name: "Gül Kurusu", cat: "Şire", price: 700, gramli: true, img: "" },
+  { id: 72, name: "Aydın İnciri", cat: "Şire", price: 600, gramli: true, img: "" },
+  { id: 73, name: "Salkım Üzüm", cat: "Şire", price: 600, gramli: true, img: "" },
+  { id: 74, name: "Çekirdeksiz Üzüm", cat: "Şire", price: 250, gramli: true, img: "" },
+  { id: 75, name: "Besni Üzümü", cat: "Şire", price: 600, gramli: true, img: "" },
+  { id: 76, name: "Hoşaflık Kayısı", cat: "Şire", price: 600, gramli: true, img: "" },
+  { id: 77, name: "Dut Kurusu", cat: "Şire", price: 500, gramli: true, img: "" },
+  { id: 78, name: "Yaban Mersini", cat: "Şire", price: 500, gramli: true, img: "" },
+  { id: 79, name: "Kudüs Hurması", cat: "Şire", price: 750, gramli: true, img: "" },
+  { id: 80, name: "Medine Hurması", cat: "Şire", price: 750, gramli: true, img: "" },
+
+  // KURUTMA (5 Ürün - Adet / Dizi)
+  { id: 81, name: "Kuru Kabak", cat: "Kurutma", price: 300, gramli: false, unit: "Adet / Dizi", img: "" },
+  { id: 82, name: "Atom Biberi", cat: "Kurutma", price: 200, gramli: false, unit: "Adet / Dizi", img: "" },
+  { id: 83, name: "Kuru Patlıcan", cat: "Kurutma", price: 250, gramli: false, unit: "Adet / Dizi", img: "" },
+  { id: 84, name: "Kuru Biber Acı", cat: "Kurutma", price: 250, gramli: false, unit: "Adet / Dizi", img: "" },
+  { id: 85, name: "Kuru Biber Tatlı", cat: "Kurutma", price: 250, gramli: false, unit: "Adet / Dizi", img: "" },
+
+  // KAHVE (10 Ürün - İlk 6 gramajlı, son 4 kutu/adet)
+  { id: 86, name: "Menengiç Kahvesi", cat: "Kahve", price: 500, gramli: true, img: "" },
+  { id: 87, name: "Sade Dibek Kahvesi", cat: "Kahve", price: 500, gramli: true, img: "" },
+  { id: 88, name: "Fındıklı Dibek Kahvesi", cat: "Kahve", price: 500, gramli: true, img: "" },
+  { id: 89, name: "Kürt Kahvesi (Damla Sakızlı)", cat: "Kahve", price: 500, gramli: true, img: "" },
+  { id: 90, name: "Dibek Granül Kahve", cat: "Kahve", price: 900, gramli: true, img: "" },
+  { id: 91, name: "Süt Tozu", cat: "Kahve", price: 250, gramli: true, img: "" },
+  { id: 92, name: "Damla Sakızlı Kutu Dibek", cat: "Kahve", price: 150, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 93, name: "Sade Kutu Dibek", cat: "Kahve", price: 150, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 94, name: "Menengiç Kutu Dibek", cat: "Kahve", price: 150, gramli: false, unit: "Kutu / Adet", img: "" },
+  { id: 95, name: "Kürt Kahvesi Kutu", cat: "Kahve", price: 400, gramli: false, unit: "Kutu / Adet", img: "" },
+
+  // NAR EKŞİSİ VE ZEYTİNYAĞI (3 Ürün - Adet / Şişe)
+  { id: 96, name: "Ev Yapımı Nar Ekşisi (1 Kg)", cat: "Nar Ekşisi ve Zeytinyağı", price: 250, gramli: false, unit: "Adet / Şişe", img: "" },
+  { id: 97, name: "500 Gramlık Nar Ekşisi (Cam Şişe)", cat: "Nar Ekşisi ve Zeytinyağı", price: 200, gramli: false, unit: "Adet / Şişe", img: "" },
+  { id: 98, name: "Zeytinyağı (1 Kg)", cat: "Nar Ekşisi ve Zeytinyağı", price: 250, gramli: false, unit: "Adet / Şişe", img: "" }
+];
 let curCat = "Tümü", searchQ = "", cart = [], selectedWeights = {}, activeImgTarget = null;
 
 function render() {
   const grid = document.getElementById("pg");
   const list = products.filter(p => {
-    const matchCat = curCat === "Tümü" || (curCat === "Favoriler" ? p.fav : p.cat === curCat);
+    const matchCat = curCat === "Tümü" || p.cat === curCat;
     const matchQ = p.name.toLowerCase().includes(searchQ.toLowerCase());
     return matchCat && matchQ;
   });
   grid.innerHTML = list.map(p => {
     const w = selectedWeights[p.id] || 1;
     const finalPrice = p.gramli ? Math.round(p.price * w) : p.price;
-    const label = p.gramli ? (w === 1 ? "1 Kg" : "500 Gr") : "Adet / Dizi";
+    const label = p.gramli ? (w === 1 ? "1 Kg" : "500 Gr") : (p.unit || "Adet");
     return `
       <div class="pc">
         <span class="ct">${p.cat}</span>
-        ${p.fav ? `<span class="fb">⭐ Favori</span>` : ""}
         <button class="up-btn" onclick="pickImg('prod-${p.id}')">📷 HD Fotoğraf</button>
         <div class="pi">
           ${p.img ? `<img id="img-prod-${p.id}" src="${p.img}">` : `<span style="font-size:2.2rem;opacity:.3">🌿</span>`}
@@ -184,7 +283,7 @@ function render() {
             <div class="vg">
               <button class="vb ${w === 0.5 ? 'sel' : ''}" onclick="setW(${p.id}, 0.5)">500 Gr</button>
               <button class="vb ${w === 1 ? 'sel' : ''}" onclick="setW(${p.id}, 1)">1 Kg</button>
-            </div>` : ""}
+            </div>` : `<div style="font-size:.76rem;color:#6b7280;margin-bottom:9px">${label}</div>`}
           <div class="pf">
             <span class="pr">${finalPrice} TL</span>
             <button class="ac" onclick="addCart(${p.id}, '${label}', ${finalPrice})">+ Sepete Ekle</button>
@@ -198,7 +297,7 @@ function setW(id, w) { selectedWeights[id] = w; render(); }
 
 function fc(cat, btn) {
   curCat = cat;
-  document.getElementById("ct").textContent = cat === "Tümü" ? "Tüm Ürünlerimiz" : cat;
+  document.getElementById("ct").textContent = cat === "Tümü" ? "Tüm Ürünlerimiz (" + products.length + ")" : cat;
   document.querySelectorAll(".cbtn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
   render();
@@ -245,25 +344,24 @@ function sendWA() {
   let msg = "Merhaba Adem Baharat, siparişim:\n\n";
   cart.forEach(c => msg += `• ${c.name} (${c.label}) x${c.qty} - ${c.price * c.qty} TL\n`);
   const tot = cart.reduce((a, b) => a + (b.price * b.qty), 0);
-  msg += `\nToplam: ${tot} TL`;
+  msg += `\nToplam Tutar: ${tot} TL`;
   window.open("https://wa.me" + encodeURIComponent(msg), "_blank");
 }
 
-// HD Kalitede Fotoğraf Yükleme (Kaliteyi bozmadan yüksek çözünürlüklü işler)
 function pickImg(target) {
   activeImgTarget = target;
   document.getElementById("imgPicker").click();
 }
 
 document.getElementById("imgPicker").addEventListener("change", function(e) {
-  const file = e.target.files[0];
+  const file = e.target.files;
   if (!file || !activeImgTarget) return;
   const reader = new FileReader();
   reader.onload = function(ev) {
     const img = new Image();
     img.onload = function() {
       const canvas = document.createElement("canvas");
-      const maxW = 1400; // HD kalite sınırı
+      const maxW = 1400;
       let w = img.width, h = img.height;
       if (w > maxW) { h = Math.round(h * (maxW / w)); w = maxW; }
       canvas.width = w; canvas.height = h;
@@ -287,7 +385,6 @@ document.getElementById("imgPicker").addEventListener("change", function(e) {
   reader.readAsDataURL(file);
 });
 
-// Yüklenen HD fotoğrafları kodun içine gömerek kalıcı HTML olarak indirir
 function exportSite() {
   document.body.classList.remove("admin-mode");
   const scriptTag = document.querySelector("script");
