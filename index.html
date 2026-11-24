@@ -1,1 +1,307 @@
-index (4).html
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Adem Baharat | Doğal Yöresel Ürünler</title>
+<style>
+:root{--p:#2d4c2b;--pd:#1e351d;--a:#d97706;--w:#25D366;--bg:#faf8f5;--t:#1f2937;--b:#e5e7eb}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+body{background:var(--bg);color:var(--t);line-height:1.45}
+.admin-bar{display:none;background:#b45309;color:#fff;padding:10px 12px;text-align:center;font-weight:700;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:200}
+body.admin-mode .admin-bar{display:flex}
+.save-site-btn{background:#fff;color:#b45309;border:none;padding:7px 14px;border-radius:20px;font-weight:800;cursor:pointer}
+.exit-admin-btn{background:rgba(0,0,0,.3);color:#fff;border:none;padding:7px 12px;border-radius:20px;cursor:pointer}
+.top{background:var(--pd);color:#fff;padding:8px 14px;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{background:var(--w);color:#fff;text-decoration:none;padding:5px 12px;border-radius:20px;font-weight:700}
+header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+body.admin-mode header{top:48px}
+.hm{max-width:1250px;margin:auto;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-size:1.25rem;font-weight:800;color:var(--p);text-decoration:none}
+.logo small{display:block;font-size:.72rem;color:var(--a)}
+.sb{flex:1;min-width:180px;max-width:400px}
+.sb input{width:100%;padding:8px 14px;border:2px solid var(--b);border-radius:20px;outline:none;font-size:.9rem}
+.sb input:focus{border-color:var(--p)}
+.ha{display:flex;gap:8px}
+.cb{background:var(--p);color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:700;cursor:pointer;font-size:.88rem}
+.sc{max-width:1250px;margin:14px auto;padding:0 14px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
+.scc{position:relative;height:240px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#2d4c2b,#1e351d);color:#fff}
+.scc img{width:100%;height:100%;object-fit:cover;display:block}
+.sco{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:14px}
+.up-btn{display:none;position:absolute;top:8px;right:8px;background:#d97706;color:#fff;border:2px solid #fff;padding:5px 10px;border-radius:15px;font-size:.74rem;font-weight:700;cursor:pointer;z-index:5}
+body.admin-mode .up-btn{display:block}
+.cn{max-width:1250px;margin:8px auto 14px;padding:0 14px 6px;display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cbtn{background:#fff;border:1px solid var(--b);padding:7px 14px;border-radius:20px;font-weight:600;font-size:.86rem;cursor:pointer;white-space:nowrap}
+.cbtn.active{background:var(--p);color:#fff}
+.con{max-width:1250px;margin:0 auto 45px;padding:0 14px}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:14px}
+@media(min-width:600px){.pg{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:16px}}
+.pc{background:#fff;border-radius:12px;border:1px solid var(--b);overflow:hidden;display:flex;flex-direction:column;position:relative}
+.ct{position:absolute;top:6px;left:6px;background:var(--p);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:5px;z-index:2}
+.fb{position:absolute;top:30px;left:6px;background:var(--a);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:10px;font-weight:700;z-index:2}
+.pi{height:175px;background:#efeae1;position:relative;display:flex;align-items:center;justify-content:center}
+@media(min-width:600px){.pi{height:195px}}
+.pi img{width:100%;height:100%;object-fit:cover;display:block}
+.pb{padding:11px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.pt{font-weight:700;margin-bottom:7px;font-size:.94rem}
+.vg{display:flex;gap:5px;margin-bottom:9px}
+.vb{flex:1;padding:5px 4px;border:1px solid var(--b);background:#f9fafb;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer}
+.vb.sel{border-color:var(--p);background:#eef5ee;color:var(--p)}
+.pf{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f3f4f6;padding-top:8px;gap:6px}
+.pr{font-size:1.05rem;font-weight:800;color:var(--p)}
+.ac{background:var(--a);color:#fff;border:none;padding:7px 10px;border-radius:7px;font-weight:700;font-size:.8rem;cursor:pointer}
+.co{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:none;justify-content:flex-end}
+.co.open{display:flex}
+.cd{background:#fff;width:100%;max-width:390px;height:100%;display:flex;flex-direction:column}
+.ch{padding:15px;background:var(--p);color:#fff;display:flex;justify-content:space-between;align-items:center}
+.ci{flex:1;overflow-y:auto;padding:15px}
+.cit{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--b)}
+.cf{padding:15px;border-top:2px solid var(--b);background:#f9fafb}
+.wcb{width:100%;background:var(--w);color:#fff;border:none;padding:13px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
+.fwa{position:fixed;bottom:16px;right:16px;background:var(--w);color:#fff;padding:11px 16px;border-radius:30px;text-decoration:none;font-weight:800;font-size:.9rem;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:90}
+footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-size:.88rem;text-align:center}
+@media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:185px}}
+</style>
+</head>
+<body>
+<div class="admin-bar">
+  <span>🔓 HD Yönetici Modu | <span id="imgCounter">Yüklenen: 0</span></span>
+  <button class="save-site-btn" onclick="exportSite()">💾 Kalıcı Kaydet (HD İndir)</button>
+  <button class="exit-admin-btn" onclick="exitAdmin()">Çıkış</button>
+</div>
+<input type="file" id="imgPicker" accept="image/*" style="display:none">
+
+<div class="top">
+  <span>🌿 Adem Baharat - Diyarbakır</span>
+  <a href="https://wa.me" target="_blank">💬 0533 138 58 98</a>
+</div>
+
+<header>
+  <div class="hm">
+    <a href="#" class="logo">🌿 ADEM BAHARAT<small>Kuruyemiş • Baharat • Yöresel</small></a>
+    <div class="sb"><input type="text" id="si" placeholder="Ürün ara..."></div>
+    <div class="ha">
+      <button class="cb" onclick="tc()">🛒 Sepet (<span id="cc">0</span>)</button>
+    </div>
+  </div>
+</header>
+
+<section class="sc">
+  <div class="scc">
+    <button class="up-btn" onclick="pickImg('banner1')">📷 HD Fotoğraf Seç</button>
+    <img id="img-banner1" alt="">
+    <div class="sco"><h3>Adem Baharat & Kuruyemiş</h3><p>Taze kuruyemiş, kahve ve yöresel lezzetler</p></div>
+  </div>
+  <div class="scc">
+    <button class="up-btn" onclick="pickImg('banner2')">📷 HD Fotoğraf Seç</button>
+    <img id="img-banner2" alt="">
+    <div class="sco"><h3>Zengin Ürün Çeşitlerimiz</h3><p>Sepete ekleyin, WhatsApp'tan sipariş verin</p></div>
+  </div>
+</section>
+
+<nav class="cn">
+  <button class="cbtn active" onclick="fc('Tümü',this)">Tümü</button>
+  <button class="cbtn" onclick="fc('Favoriler',this)">⭐ Favoriler</button>
+  <button class="cbtn" onclick="fc('Kuruyemiş',this)">Kuruyemiş</button>
+  <button class="cbtn" onclick="fc('Kahve',this)">Kahve</button>
+  <button class="cbtn" onclick="fc('Kaçak Çay',this)">Kaçak Çay</button>
+  <button class="cbtn" onclick="fc('Şire',this)">Şire</button>
+  <button class="cbtn" onclick="fc('Kurutma',this)">Kurutma</button>
+  <button class="cbtn" onclick="fc('Sucuk Pestil',this)">Sucuk Pestil</button>
+  <button class="cbtn" onclick="fc('Bakliyat',this)">Bakliyat</button>
+  <button class="cbtn" onclick="fc('Salça',this)">Salça</button>
+  <button class="cbtn" onclick="fc('Nar Ekşisi ve Zeytinyağı',this)">Nar Ekşisi & Zeytinyağı</button>
+</nav>
+
+<main class="con">
+  <h3 id="ct">Tüm Ürünlerimiz</h3>
+  <div class="pg" id="pg"></div>
+</main>
+
+<div class="co" id="co" onclick="if(event.target===this)tc()">
+  <div class="cd">
+    <div class="ch">
+      <h3>🛒 Sepetim</h3>
+      <button onclick="tc()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer">&times;</button>
+    </div>
+    <div class="ci" id="ci"></div>
+    <div class="cf">
+      <div style="display:flex;justify-content:space-between;font-weight:800;font-size:1.05rem">
+        <span>Toplam:</span><span id="ctot">0 TL</span>
+      </div>
+      <button class="wcb" onclick="sendWA()">💬 WhatsApp ile Siparişi Tamamla</button>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
+
+<footer>
+  <p style="font-weight:800;font-size:1.05rem;margin-bottom:6px">🌿 ADEM BAHARAT</p>
+  <p><strong>📍 Adres:</strong> PEYAS MAHALLESİ 215. SOKAK ESKİ NİL KOLEJİ KARŞISI ADEM BAHARAT</p>
+  <p style="margin-top:6px"><strong>📱 WhatsApp:</strong> 0533 138 58 98</p>
+</footer>
+<script>
+// Kendi ürünlerinizi ve fiyatlarınızı aşağıdaki listeye ekleyebilirsiniz (Kurutma kategorisi ve 4 ürünü hazır eklendi)
+const products = [
+  { id: 1, name: "Kurutmalık Dolmalık Patlıcan (1 Dizi)", cat: "Kurutma", price: 140, gramli: false, fav: true, img: "" },
+  { id: 2, name: "Kurutmalık Dolmalık Biber (1 Dizi)", cat: "Kurutma", price: 140, gramli: false, fav: true, img: "" },
+  { id: 3, name: "Kurutmalık Kabak (1 Dizi)", cat: "Kurutma", price: 130, gramli: false, fav: false, img: "" },
+  { id: 4, name: "Kurutmalık Acur (1 Dizi)", cat: "Kurutma", price: 130, gramli: false, fav: false, img: "" },
+  { id: 5, name: "Kavrulmuş Antep Fıstığı", cat: "Kuruyemiş", price: 650, gramli: true, fav: true, img: "" },
+  { id: 6, name: "Özel Karışık Kuruyemiş", cat: "Kuruyemiş", price: 420, gramli: true, fav: true, img: "" },
+  { id: 7, name: "Osmaniye Dibek Kahvesi", cat: "Kahve", price: 240, gramli: true, fav: false, img: "" },
+  { id: 8, name: "Seylan Kaçak Çay", cat: "Kaçak Çay", price: 320, gramli: true, fav: true, img: "" },
+  { id: 9, name: "Cevizli Sucuk", cat: "Sucuk Pestil", price: 280, gramli: true, fav: false, img: "" },
+  { id: 10, name: "Ev Yapımı Domates Salçası (1 Kg)", cat: "Salça", price: 150, gramli: false, fav: false, img: "" }
+];
+
+let curCat = "Tümü", searchQ = "", cart = [], selectedWeights = {}, activeImgTarget = null;
+
+function render() {
+  const grid = document.getElementById("pg");
+  const list = products.filter(p => {
+    const matchCat = curCat === "Tümü" || (curCat === "Favoriler" ? p.fav : p.cat === curCat);
+    const matchQ = p.name.toLowerCase().includes(searchQ.toLowerCase());
+    return matchCat && matchQ;
+  });
+  grid.innerHTML = list.map(p => {
+    const w = selectedWeights[p.id] || 1;
+    const finalPrice = p.gramli ? Math.round(p.price * w) : p.price;
+    const label = p.gramli ? (w === 1 ? "1 Kg" : "500 Gr") : "Adet / Dizi";
+    return `
+      <div class="pc">
+        <span class="ct">${p.cat}</span>
+        ${p.fav ? `<span class="fb">⭐ Favori</span>` : ""}
+        <button class="up-btn" onclick="pickImg('prod-${p.id}')">📷 HD Fotoğraf</button>
+        <div class="pi">
+          ${p.img ? `<img id="img-prod-${p.id}" src="${p.img}">` : `<span style="font-size:2.2rem;opacity:.3">🌿</span>`}
+        </div>
+        <div class="pb">
+          <div class="pt">${p.name}</div>
+          ${p.gramli ? `
+            <div class="vg">
+              <button class="vb ${w === 0.5 ? 'sel' : ''}" onclick="setW(${p.id}, 0.5)">500 Gr</button>
+              <button class="vb ${w === 1 ? 'sel' : ''}" onclick="setW(${p.id}, 1)">1 Kg</button>
+            </div>` : ""}
+          <div class="pf">
+            <span class="pr">${finalPrice} TL</span>
+            <button class="ac" onclick="addCart(${p.id}, '${label}', ${finalPrice})">+ Sepete Ekle</button>
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+function setW(id, w) { selectedWeights[id] = w; render(); }
+
+function fc(cat, btn) {
+  curCat = cat;
+  document.getElementById("ct").textContent = cat === "Tümü" ? "Tüm Ürünlerimiz" : cat;
+  document.querySelectorAll(".cbtn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  render();
+}
+
+// Arama kutusuna musting2147 yazıldığında HD Yönetici Modunu açar
+document.getElementById("si").addEventListener("input", function(e) {
+  if (e.target.value.trim().toLowerCase() === "musting2147") {
+    document.body.classList.add("admin-mode");
+    e.target.value = "";
+    searchQ = "";
+    render();
+    return;
+  }
+  searchQ = e.target.value;
+  render();
+});
+
+function exitAdmin() { document.body.classList.remove("admin-mode"); }
+
+function addCart(id, label, price) {
+  const p = products.find(x => x.id === id);
+  const key = id + "-" + label;
+  const ex = cart.find(x => x.key === key);
+  if (ex) ex.qty++; else cart.push({ key, name: p.name, label, price, qty: 1 });
+  updateCart();
+}
+
+function updateCart() {
+  document.getElementById("cc").textContent = cart.reduce((a, b) => a + b.qty, 0);
+  const tot = cart.reduce((a, b) => a + (b.price * b.qty), 0);
+  document.getElementById("ctot").textContent = tot + " TL";
+  document.getElementById("ci").innerHTML = cart.length ? cart.map((c, i) => `
+    <div class="cit">
+      <div><strong>${c.name}</strong><br><small>${c.label} x ${c.qty} = ${c.price * c.qty} TL</small></div>
+      <button onclick="cart.splice(${i},1);updateCart()" style="border:none;background:#fee2e2;color:#b91c1c;padding:4px 8px;border-radius:5px;cursor:pointer">Sil</button>
+    </div>`).join("") : "<p style='color:#71717a'>Sepetiniz boş.</p>";
+}
+
+function tc() { document.getElementById("co").classList.toggle("open"); }
+
+function sendWA() {
+  if (!cart.length) return alert("Sepetiniz boş!");
+  let msg = "Merhaba Adem Baharat, siparişim:\n\n";
+  cart.forEach(c => msg += `• ${c.name} (${c.label}) x${c.qty} - ${c.price * c.qty} TL\n`);
+  const tot = cart.reduce((a, b) => a + (b.price * b.qty), 0);
+  msg += `\nToplam: ${tot} TL`;
+  window.open("https://wa.me" + encodeURIComponent(msg), "_blank");
+}
+
+// HD Kalitede Fotoğraf Yükleme (Kaliteyi bozmadan yüksek çözünürlüklü işler)
+function pickImg(target) {
+  activeImgTarget = target;
+  document.getElementById("imgPicker").click();
+}
+
+document.getElementById("imgPicker").addEventListener("change", function(e) {
+  const file = e.target.files[0];
+  if (!file || !activeImgTarget) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    const img = new Image();
+    img.onload = function() {
+      const canvas = document.createElement("canvas");
+      const maxW = 1400; // HD kalite sınırı
+      let w = img.width, h = img.height;
+      if (w > maxW) { h = Math.round(h * (maxW / w)); w = maxW; }
+      canvas.width = w; canvas.height = h;
+      canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+      const hdData = canvas.toDataURL("image/jpeg", 0.92);
+
+      if (activeImgTarget.startsWith("prod-")) {
+        const id = parseInt(activeImgTarget.replace("prod-", ""));
+        const p = products.find(x => x.id === id);
+        if (p) p.img = hdData;
+        render();
+      } else {
+        const el = document.getElementById("img-" + activeImgTarget);
+        if (el) el.src = hdData;
+      }
+      const c = document.getElementById("imgCounter");
+      c.textContent = "Yüklenen: " + (parseInt(c.textContent.replace(/\D/g, "")) + 1);
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+
+// Yüklenen HD fotoğrafları kodun içine gömerek kalıcı HTML olarak indirir
+function exportSite() {
+  document.body.classList.remove("admin-mode");
+  const scriptTag = document.querySelector("script");
+  const updatedList = "const products = " + JSON.stringify(products, null, 2) + ";";
+  scriptTag.textContent = scriptTag.textContent.replace(/const products = \[[\s\S]*?\];/, updatedList);
+  const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+  const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "index.html";
+  a.click();
+}
+
+render();
+</script>
+</body>
+</html>
