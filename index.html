@@ -361,12 +361,12 @@ document.getElementById("imgPicker").addEventListener("change", function(e) {
     const img = new Image();
     img.onload = function() {
       const canvas = document.createElement("canvas");
-      const maxW = 1400;
+            const maxW = 600; // Ürün kartları için ideal HD genişlik
       let w = img.width, h = img.height;
       if (w > maxW) { h = Math.round(h * (maxW / w)); w = maxW; }
       canvas.width = w; canvas.height = h;
       canvas.getContext("2d").drawImage(img, 0, 0, w, h);
-      const hdData = canvas.toDataURL("image/jpeg", 0.92);
+      const hdData = canvas.toDataURL("image/jpeg", 0.78);
 
       if (activeImgTarget.startsWith("prod-")) {
         const id = parseInt(activeImgTarget.replace("prod-", ""));
