@@ -2,273 +2,234 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name"viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Adem Baharat | Doğal Yöresel Ürünler</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Adem Baharat | Doğal & Yöresel Lezzetler</title>
 <style>
-:root{--p:#2d4c2b;--pd:#1e351d;--a:#d97706;--w:#25D366;--bg:#faf8f5;--t:#1f2937;--b:#e5e7eb}
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
-body{background:var(--bg);color:var(--t);line-height:1.45}
-.admin-bar{display:none;background:#b45309;color:#fff;padding:10px 12px;text-align:center;font-weight:700;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:200}
-body.admin-mode .admin-bar{display:flex}
-.save-site-btn{background:#fff;color:#b45309;border:none;padding:7px 14px;border-radius:20px;font-weight:800;cursor:pointer}
-.exit-admin-btn{background:rgba(0,0,0,.3);color:#fff;border:none;padding:7px 12px;border-radius:20px;cursor:pointer}
-.top{background:var(--pd);color:#fff;padding:8px 14px;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.top a{background:var(--w);color:#fff;text-decoration:none;padding:5px 12px;border-radius:20px;font-weight:700}
-header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
-body.admin-mode header{top:48px}
-.hm{max-width:1250px;margin:auto;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.logo{font-size:1.25rem;font-weight:800;color:var(--p);text-decoration:none}
-.logo small{display:block;font-size:.72rem;color:var(--a)}
-.sb{flex:1;min-width:180px;max-width:400px}
-.sb input{width:100%;padding:8px 14px;border:2px solid var(--b);border-radius:20px;outline:none;font-size:.9rem}
-.ha{display:flex;gap:8px}
-.cb{background:var(--p);color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:700;cursor:pointer;font-size:.88rem}
-.sc{max-width:1250px;margin:14px auto;padding:0 14px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
-.scc{position:relative;height:240px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#2d4c2b,#1e351d);color:#fff}
-.scc img{width:100%;height:100%;object-fit:cover;display:block}
-.sco{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:14px}
-.up-btn{display:none;position:absolute;top:8px;right:8px;background:#d97706;color:#fff;border:2px solid #fff;padding:5px 10px;border-radius:15px;font-size:.74rem;font-weight:700;cursor:pointer;z-index:5}
-body.admin-mode .up-btn{display:block}
-.cn{max-width:1250px;margin:8px auto 14px;padding:0 14px 6px;display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.cbtn{background:#fff;border:1px solid var(--b);padding:7px 14px;border-radius:20px;font-weight:600;font-size:.86rem;cursor:pointer;white-space:nowrap}
-.cbtn.active{background:var(--p);color:#fff}
-.con{max-width:1250px;margin:0 auto 45px;padding:0 14px}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:14px}
-@media(min-width:600px){.pg{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:16px}}
-.pc{background:#fff;border-radius:12px;border:1px solid var(--b);overflow:hidden;display:flex;flex-direction:column;position:relative}
-.ct{position:absolute;top:6px;left:6px;background:var(--p);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:5px;z-index:2}
-.fb{position:absolute;top:30px;left:6px;background:var(--a);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:10px;font-weight:700;z-index:2}
-.pi{height:175px;background:#efeae1;position:relative;display:flex;align-items:center;justify-content:center}
-@media(min-width:600px){.pi{height:195px}}
-.pi img{width:100%;height:100%;object-fit:cover;display:block}
-.pb{padding:11px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
-.pt{font-weight:700;margin-bottom:7px;font-size:.94rem}
-.vg{display:flex;gap:5px;margin-bottom:9px}
-.vb{flex:1;padding:5px 4px;border:1px solid var(--b);background:#f9fafb;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer}
-.vb.sel{border-color:var(--p);background:#eef5ee;color:var(--p)}
-.pf{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f3f4f6;padding-top:8px;gap:6px}
-.pr{font-size:1.05rem;font-weight:800;color:var(--p)}
-.ac{background:var(--a);color:#fff;border:none;padding:7px 10px;border-radius:7px;font-weight:700;font-size:.8rem;cursor:pointer}
-.co{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:none;justify-content:flex-end}
-.co.open{display:flex}
-.cd{background:#fff;width:100%;max-width:390px;height:100%;display:flex;flex-direction:column}
-.ch{padding:15px;background:var(--p);color:#fff;display:flex;justify-content:space-between;align-items:center}
-.ci{flex:1;overflow-y:auto;padding:15px}
-.cit{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--b)}
-.cf{padding:15px;border-top:2px solid var(--b);background:#f9fafb}
-.wcb{width:100%;background:var(--w);color:#fff;border:none;padding:13px;border-radius:9px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
-.fwa{position:fixed;bottom:16px;right:16px;background:var(--w);color:#fff;padding:11px 16px;border-radius:30px;text-decoration:none;font-weight:800;font-size:.9rem;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:90}
-footer{background:var(--pd);color:#fff;padding:28px 14px;margin-top:30px;font-size:.88rem}
-@media(max-width:700px){.sc{grid-template-columns:1fr}.scc{height:185px}}
+:root {
+  --brand: #f97316;
+  --brand-dark: #ea580c;
+  --brand-soft: #fff7ed;
+  --dark: #18181b;
+  --text: #27272a;
+  --muted: #71717a;
+  --bg: #fafafa;
+  --border: #e4e4e7;
+  --wa: #25D366;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, -apple-system, sans-serif; }
+body { background: var(--bg); color: var(--text); line-height: 1.45; }
+
+/* Yönetici Çubuğu */
+.admin-bar {
+  display: none; background: #18181b; color: #fff; padding: 10px 14px;
+  justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 999; border-bottom: 2px solid var(--brand);
+}
+body.admin-mode .admin-bar { display: flex; }
+.save-btn { background: var(--brand); color: #fff; border: none; padding: 7px 15px; border-radius: 6px; font-weight: 700; cursor: pointer; }
+.exit-btn { background: #3f3f46; color: #fff; border: none; padding: 7px 12px; border-radius: 6px; cursor: pointer; }
+
+/* Üst Duyuru Barı */
+.promo-bar {
+  background: var(--brand); color: #fff; text-align: center;
+  padding: 7px 12px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.3px;
+}
+
+/* Header */
+header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+body.admin-mode header { top: 46px; }
+.header-inner {
+  max-width: 1280px; margin: auto; padding: 14px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.logo { text-decoration: none; display: flex; flex-direction: column; }
+.logo-title { font-size: 1.5rem; font-weight: 900; color: var(--brand); letter-spacing: -0.5px; line-height: 1; }
+.logo-sub { font-size: 0.72rem; color: var(--muted); font-weight: 600; margin-top: 3px; }
+
+.search-box { flex: 1; min-width: 220px; max-width: 480px; position: relative; }
+.search-box input {
+  width: 100%; padding: 10px 16px; border: 1.5px solid var(--border);
+  border-radius: 99px; font-size: 0.9rem; outline: none; background: #f4f4f5; transition: 0.2s;
+}
+.search-box input:focus { border-color: var(--brand); background: #fff; }
+
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.wa-top {
+  background: #f4f4f5; color: var(--text); text-decoration: none;
+  padding: 9px 14px; border-radius: 99px; font-size: 0.84rem; font-weight: 700;
+}
+.cart-btn {
+  background: var(--brand); color: #fff; border: none; padding: 10px 18px;
+  border-radius: 99px; font-weight: 700; font-size: 0.9rem; cursor: pointer;
+  display: flex; align-items: center; gap: 6px; transition: 0.2s;
+}
+.cart-btn:hover { background: var(--brand-dark); }
+
+/* Kategori Menüsü */
+.cat-wrap { background: #fff; border-bottom: 1px solid var(--border); }
+.cat-nav {
+  max-width: 1280px; margin: auto; padding: 10px 16px;
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+}
+.cat-nav::-webkit-scrollbar { display: none; }
+.cat-btn {
+  background: transparent; border: 1px solid transparent; padding: 7px 14px;
+  border-radius: 8px; font-size: 0.86rem; font-weight: 600; color: var(--text);
+  cursor: pointer; white-space: nowrap; transition: 0.2s;
+}
+.cat-btn:hover { background: var(--brand-soft); color: var(--brand); }
+.cat-btn.active { background: var(--brand); color: #fff; }
+
+/* Banner Alanı */
+.hero {
+  max-width: 1280px; margin: 18px auto; padding: 0 16px;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px;
+}
+.banner-card {
+  position: relative; height: 220px; border-radius: 14px; overflow: hidden;
+  background: linear-gradient(135deg, #f97316, #c2410c); color: #fff;
+}
+.banner-card.alt { background: linear-gradient(135deg, #27272a, #18181b); }
+.banner-card img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; }
+.banner-overlay {
+  position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  padding: 20px; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.banner-overlay h2 { font-size: 1.35rem; font-weight: 800; margin-bottom: 4px; }
+.banner-overlay p { font-size: 0.88rem; opacity: 0.9; }
+.up-btn {
+  display: none; position: absolute; top: 10px; right: 10px; z-index: 10;
+  background: #18181b; color: #fff; border: 1.5px solid #fff;
+  padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer;
+}
+body.admin-mode .up-btn { display: block; }
+
+/* Ürün Listesi */
+.container { max-width: 1280px; margin: 20px auto 50px; padding: 0 16px; }
+.section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.section-head h3 { font-size: 1.25rem; font-weight: 800; color: var(--dark); }
+.prod-count { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 14px;
+}
+@media(min-width: 640px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+}
+
+/* Ürün Kartı (Turuncu Kuruyemiş Tarzı) */
+.card {
+  background: #fff; border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; display: flex; flex-direction: column; position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.badge-cat {
+  position: absolute; top: 8px; left: 8px; z-index: 2;
+  background: rgba(255,255,255,0.92); color: var(--text);
+  font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 6px;
+}
+.badge-out {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+  background: #ef4444; color: #fff; font-size: 0.68rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 6px;
+}
+.card-img {
+  height: 180px; background: #f4f4f5; position: relative;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.card-img img { width: 100%; height: 100%; object-fit: cover; }
+.placeholder-icon { font-size: 2.5rem; opacity: 0.35; }
+
+.card-body { padding: 12px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.card-title { font-size: 0.94rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; line-height: 1.3; }
+
+/* 500 gr ve 1 kg Kutucukları */
+.gram-box { display: flex; gap: 6px; margin-bottom: 10px; }
+.gram-btn {
+  flex: 1; padding: 6px 4px; border: 1.5px solid var(--border); background: #fff;
+  border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: var(--muted);
+  cursor: pointer; text-align: center; transition: 0.15s;
+}
+.gram-btn.active {
+  border-color: var(--brand); background: var(--brand-soft); color: var(--brand-dark);
+}
+.unit-tag {
+  display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--muted);
+  background: #f4f4f5; padding: 4px 8px; border-radius: 6px; margin-bottom: 10px; width: fit-content;
+}
+
+.card-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding-top: 10px; border-top: 1px solid #f4f4f5;
+}
+.price { font-size: 1.1rem; font-weight: 800; color: var(--brand-dark); }
+.price.out { font-size: 0.85rem; color: #ef4444; }
+.add-btn {
+  background: var(--brand); color: #fff; border: none; padding: 8px 12px;
+  border-radius: 8px; font-size: 0.78rem; font-weight: 800; cursor: pointer;
+  letter-spacing: 0.2px; transition: 0.15s;
+}
+.add-btn:hover { background: var(--brand-dark); }
+.add-btn:disabled { background: #d4d4d8; cursor: not-allowed; }
+
+/* Sepet Çekmecesi */
+.drawer-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999;
+  display: none; justify-content: flex-end;
+}
+.drawer-overlay.open { display: flex; }
+.drawer {
+  background: #fff; width: 100%; max-width: 400px; height: 100%;
+  display: flex; flex-direction: column;
+}
+.drawer-head {
+  padding: 16px; background: var(--dark); color: #fff;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.drawer-body { flex: 1; overflow-y: auto; padding: 16px; }
+.cart-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid var(--border); gap: 10px;
+}
+.qty-ctrl { display: flex; align-items: center; gap: 6px; }
+.qty-btn {
+  width: 26px; height: 26px; border: 1px solid var(--border); background: #f4f4f5;
+  border-radius: 6px; font-weight: 800; cursor: pointer;
+}
+.drawer-foot { padding: 16px; border-top: 1px solid var(--border); background: #fafafa; }
+.wa-order-btn {
+  width: 100%; background: var(--wa); color: #fff; border: none; padding: 14px;
+  border-radius: 10px; font-size: 1rem; font-weight: 800; cursor: pointer; margin-top: 12px;
+}
+
+/* Footer */
+footer { background: var(--dark); color: #e4e4e7; padding: 32px 16px; font-size: 0.88rem; }
+.footer-inner {
+  max-width: 1280px; margin: auto; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+}
+footer h4 { color: var(--brand); margin-bottom: 8px; font-size: 1rem; }
+
+@media(max-width: 720px) {
+  .hero { grid-template-columns: 1fr; }
+  .banner-card { height: 165px; }
+  .wa-top { display: none; }
+}
 </style>
 </head>
 <body>
+
 <div class="admin-bar">
-<span>🔓 HD Yönetici Modu | <span id="imgCounter">Yüklenen: 0</span></span>
-<button class="save-site-btn" onclick="exportSite()">💾 Kalıcı Kaydet (HD İndir)</button>
-<button class="exit-admin-btn" onclick="exitAdmin()">Çıkış</button>
+  <span>🔓 Yönetici Modu Aktif | <span id="imgCounter">Fotoğraf: 0</span></span>
+  <button class="save-btn" onclick="exportSite()">💾 Değişiklikleri Kaydet (İndir)</button>
+  <button class="exit-btn" onclick="exitAdmin()">Çıkış</button>
 </div>
 <input type="file" id="imgPicker" accept="image/*" style="display:none">
-<div class="top"><span>🌿 Adem Baharat - Diyarbakır</span><a href="https://whatsapp.com" target="_blank">💬 0533 138 58 98</a></div>
-<header><div class="hm">
-<a href="#" class="logo">🌿 ADEM BAHARAT<small>Kuruyemiş • Baharat • Yöresel</small></a>
-<div class="sb"><input type="text" id="si" placeholder="Ürün ara..."></div>
-<div class="ha">
-<button class="cb" onclick="tc()">🛒 Sepet (<span id="cc">0</span>)</button>
-</div>
-</div></header>
-<section class="sc">
-<div class="scc"><button class="up-btn" onclick="pickImg('banner1')">📷 HD Fotoğraf Seç</button><img id="img-banner1" alt=""><div class="sco"><h3>Adem Baharat & Kuruyemiş</h3><p>Taze kuruyemiş, kahve ve yöresel lezzetler</p></div></div>
-<div class="scc"><button class="up-btn" onclick="pickImg('banner2')">📷 HD Fotoğraf Seç</button><img id="img-banner2" alt=""><div class="sco"><h3>Zengin Ürün Çeşitlerimiz</h3><p>Sepete ekleyin, WhatsApp'tan sipariş verin</p></div></div>
-</section>
-<nav class="cn">
-<button class="cbtn active" onclick="fc('Tümü',this)">Tümü</button>
-<button class="cbtn" onclick="fc('Favoriler',this)">⭐ Favoriler</button>
-<button class="cbtn" onclick="fc('Kuruyemiş',this)">Kuruyemiş</button>
-<button class="cbtn" onclick="fc('Kahve',this)">Kahve</button>
-<button class="cbtn" onclick="fc('Kaçak Çay',this)">Kaçak Çay</button>
-<button class="cbtn" onclick="fc('Şire',this)">Şire</button>
- <button class="cbtn" onclick="fc('Kurutma',this)">Kurutma</button> 
-<button class="cbtn" onclick="fc('Sucuk Pestil',this)">Sucuk Pestil</button>
-<button class="cbtn" onclick="fc('Bakliyat',this)">Bakliyat</button>
-<button class="cbtn" onclick="fc('Salça',this)">Salça</button>
-<button class="cbtn" onclick="fc('Nar Ekşisi ve Zeytinyağı',this)">Nar Ekşisi & Zeytinyağı</button>
-</nav>
-<main class="con"><h3 id="ct">Tüm Ürünlerimiz</h3><div class="pg" id="pg"></div></main>
-<div class="co" id="co" onclick="if(event.target===this)tc()"><div class="cd">
-<div class="ch"><h3>🛒 Sepetim</h3><button onclick="tc()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer">&times;</button></div>
-<div class="ci" id="ci"></div>
-<div class="cf">
-<div style="display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;margin-bottom:8px"><span>Toplam:</span><span id="ctot">0 TL</span></div>
-<textarea id="ca" rows="2" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px" placeholder="Adınız ve Adresiniz..."></textarea>
-<button class="wcb" onclick="cwa()">💬 WhatsApp ile Siparişi Tamamla</button>
-</div>
-</div></div>
-<a href="https://whatsapp.com" target="_blank" class="fwa">💬 WhatsApp Sipariş</a>
-<footer><div style="max-width:1250px;margin:auto">
-<p><strong>📍 Adres:</strong> Diyarbakır, Kayapınar, Peyas Mahallesi, 215. Sokak, Eski Nil Koleji Karşısı - ADEM BAHARAT</p>
-<p style="margin-top:8px"><strong>📱 WhatsApp:</strong> 0533 138 58 98</p>
-</div></footer>
-<script>
-let EMBEDDED_IMGS = {};
-if(new URLSearchParams(window.location.search).get('yonetici')==='5896'){document.body.classList.add('admin-mode')}
-function makeSvg(txt){return "data:image/svg+xml;utf8,"+encodeURIComponent(`<svg xmlns="http://w3.org" width="300" height="220"><rect width="100%" height="100%" fill="#2d4c2b"/><text x="50%" y="45%" font-family="sans-serif" font-size="16" font-weight="bold" fill="#fbbf24" text-anchor="middle">ADEM BAHARAT</text><text x="50%" y="60%" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">${txt}</text></svg>`)}
-const P=[
- {id:1,c:"Kurutma",n:"Kuru Patlıcan (Dizme)",v:[{l:"1 Dizi (50 Adet)",p:150}]},
-{id:2,c:"Kurutma",n:"Kuru Dolmalık Biber (Dizme)",v:[{l:"1 Dizi (50 Adet)",p:150}]},
-{id:3,c:"Kurutma",n:"Kuru Kabak (Dizme)",v:[{l:"1 Dizi (50 Adet)",p:140}]},
-{id:4,c:"Kurutma",n:"Kuru Bamya (İp)",v:[{l:"250 gr",p:250},{l:"500 gr",p:500}]},
-{id:5,c:"Kurutma",n:"Kuru Domates",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:29,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi (Paket)",v:[{l:"1 Adet",p:150}]},
-{id:30,c:"Kahve",n:"Diyarbakır Menengiç Kahvesi (Paket)",v:[{l:"1 Adet",p:150}]},
-{id:31,c:"Kahve",n:"Kürt Kahvesi (Paket)",v:[{l:"1 Adet",p:400}]},
-{id:46,c:"Kahve",n:"Granül Kahve",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:47,c:"Kahve",n:"Fındıklı Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:48,c:"Kahve",n:"Kürt Kahvesi",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:49,c:"Kahve",n:"Menengiç Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:50,c:"Kahve",n:"Damla Sakızlı Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:51,c:"Kahve",n:"Sade Dibek Kahvesi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:95,c:"Kahve",n:"Türk Kahvesi",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:32,c:"Kaçak Çay",n:"Camelon Tea",v:[{l:"1 Adet",p:650}]},
-{id:33,c:"Kaçak Çay",n:"El Zeyna Gold Serisi",v:[{l:"1 Adet",p:650}]},
-{id:34,c:"Kaçak Çay",n:"Istıkan Çay",v:[{l:"1 Adet",p:650}]},
-{id:35,c:"Kaçak Çay",n:"Halep Çay",v:[{l:"1 Adet",p:650}]},
-{id:59,c:"Kaçak Çay",n:"Mevlana Çay",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
-{id:60,c:"Kaçak Çay",n:"Barut Çay",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:61,c:"Kaçak Çay",n:"Seylan Çayı",v:[{l:"500 gr",p:325},{l:"1 kg",p:650}]},
-{id:36,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (1 Kg)",v:[{l:"1 Adet (1 Kg)",p:250}]},
-{id:40,c:"Nar Ekşisi ve Zeytinyağı",n:"Ev Yapımı Nar Ekşisi (500 Gr)",v:[{l:"1 Adet (500 Gr)",p:200}]},
-{id:41,c:"Nar Ekşisi ve Zeytinyağı",n:"Süzme Zeytinyağı",v:[{l:"Küçük Boy",p:150},{l:"Büyük Boy",p:250}]},
-{id:42,c:"Nar Ekşisi ve Zeytinyağı",n:"Börücek Nar Ekşisi",v:[{l:"1 Adet",p:90}]},
-{id:37,c:"Şire",n:"Kudüs Hurması",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:38,c:"Şire",n:"Medine Hurması",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:39,c:"Şire",n:"Yaban Mersini",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:43,c:"Şire",n:"Çekirdeksiz Siyah Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:44,c:"Şire",n:"Kuru Erik",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
-{id:45,c:"Şire",n:"Besni Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:52,c:"Şire",n:"Kuru Elma",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:53,c:"Şire",n:"Jumbo Sarı Kayısı",v:[{l:"500 gr",p:350},{l:"1 kg",p:700}]},
-{id:54,c:"Şire",n:"Siyah Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:55,c:"Şire",n:"Salkım Üzüm",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:94,c:"Şire",n:"Aydın İnciri",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:56,c:"Sucuk Pestil",n:"Lice Cevizli Sucuk",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
-{id:57,c:"Sucuk Pestil",n:"Mardin Cevizli Sucuk",v:[{l:"500 gr",p:375},{l:"1 kg",p:750}]},
-{id:58,c:"Sucuk Pestil",n:"Kef Sucuğu",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
-{id:77,c:"Kuruyemiş",f:1,n:"Antep Fıstığı",v:[{l:"500 gr",p:700},{l:"1 kg",p:1400}]},
-{id:76,c:"Kuruyemiş",n:"Siirt Fıstığı",v:[{l:"500 gr",p:650},{l:"1 kg",p:1300}]},
-{id:78,c:"Kuruyemiş",n:"Süper Karışım",v:[{l:"500 gr",p:550},{l:"1 kg",p:1100}]},
-{id:74,c:"Kuruyemiş",n:"Fındık",v:[{l:"500 gr",p:500},{l:"1 kg",p:1000}]},
-{id:75,c:"Kuruyemiş",n:"Kavrulmuş Kaju",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:79,c:"Kuruyemiş",n:"Kavrulmuş Badem",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:80,c:"Kuruyemiş",n:"Çiğ Badem",v:[{l:"500 gr",p:450},{l:"1 kg",p:900}]},
-{id:83,c:"Kuruyemiş",n:"Lüks Karışık",v:[{l:"500 gr",p:300},{l:"1 kg",p:600}]},
-{id:65,c:"Kuruyemiş",n:"Kabak İçi",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:90,c:"Kuruyemiş",n:"Balkabağı Çekirdeği",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
-{id:92,c:"Kuruyemiş",n:"Tuzsuz Kavrulmuş Kabak",v:[{l:"500 gr",p:225},{l:"1 kg",p:450}]},
-{id:87,c:"Kuruyemiş",n:"Çiğ Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
-{id:88,c:"Kuruyemiş",n:"Az Tuzlu Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
-{id:89,c:"Kuruyemiş",n:"Tuzlu Nevşehir Kabağı",v:[{l:"500 gr",p:200},{l:"1 kg",p:400}]},
-{id:62,c:"Kuruyemiş",n:"Kabuklu Maraş Cevizi",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
-{id:64,c:"Kuruyemiş",n:"Kadın Tırnağı Kabak Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:71,c:"Kuruyemiş",n:"Tuzlu Yer Fıstığı",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:72,c:"Kuruyemiş",n:"Kuru Karpuz Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:73,c:"Kuruyemiş",n:"Kavrulmuş Kavun Çekirdeği",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:91,c:"Kuruyemiş",n:"Diyarbakır Kabağı",v:[{l:"500 gr",p:150},{l:"1 kg",p:300}]},
-{id:82,c:"Kuruyemiş",n:"Köy Nohutu",v:[{l:"500 gr",p:140},{l:"1 kg",p:280}]},
-{id:63,c:"Kuruyemiş",n:"Manisa Cevizi (İnce Kabuk)",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:69,c:"Kuruyemiş",n:"Soslu Fıstık",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:70,c:"Kuruyemiş",n:"Soslu Mısır",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:84,c:"Kuruyemiş",n:"Tuzlu Mardin Leblebisi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:85,c:"Kuruyemiş",n:"Özel Tuzlu Leblebi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:86,c:"Kuruyemiş",n:"Tuzsuz Mardin Leblebisi",v:[{l:"500 gr",p:125},{l:"1 kg",p:250}]},
-{id:81,c:"Kuruyemiş",n:"Şekerli Nohut",v:[{l:"500 gr",p:120},{l:"1 kg",p:240}]},
-{id:66,c:"Kuruyemiş",n:"Çiğ Dakota Çekirdeği",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
-{id:67,c:"Kuruyemiş",n:"Kavrulmuş Tuzsuz Dakota",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
-{id:68,c:"Kuruyemiş",n:"Tuzlu Dakota",v:[{l:"500 gr",p:100},{l:"1 kg",p:200}]},
-{id:93,c:"Kuruyemiş",n:"Japon Çekirdeği",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
-{id:96,c:"Salça",n:"Urfa Biber Salçası",v:[{l:"500 gr",p:175},{l:"1 kg",p:350}]},
-{id:98,c:"Salça",n:"Tatlı Biber Salçası",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
-{id:99,c:"Salça",n:"Acı Biber Salçası",v:[{l:"500 gr",p:85},{l:"1 kg",p:170}]},
-{id:97,c:"Salça",n:"Hatay Ev Yapımı Domates Salçası",v:[{l:"500 gr",p:75},{l:"1 kg",p:150}]},
-{id:110,c:"Bakliyat",n:"Tane Sumak",v:[{l:"500 gr",p:250},{l:"1 kg",p:500}]},
-{id:101,c:"Bakliyat",n:"Konya Fasulyesi",v:[{l:"500 gr",p:60},{l:"1 kg",p:120}]},
-{id:107,c:"Bakliyat",n:"Kavrulmuş Tel Şehriye",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
-{id:108,c:"Bakliyat",n:"Arpa Şehriye",v:[{l:"500 gr",p:35},{l:"1 kg",p:70}]},
-{id:100,c:"Bakliyat",n:"Şehriyeli Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:102,c:"Bakliyat",n:"Çorbalık Yarma",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:103,c:"Bakliyat",n:"Buğday",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:111,c:"Bakliyat",n:"Yarma ve Dövme",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:104,c:"Bakliyat",n:"Orta İri Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:105,c:"Bakliyat",n:"En İri Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:106,c:"Bakliyat",n:"Orta Pilavlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:112,c:"Bakliyat",n:"Esmer Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]},
-{id:109,c:"Bakliyat",n:"Kısırlık Bulgur",v:[{l:"500 gr",p:25},{l:"1 kg",p:50}]}
-];
-let sv={},cart=[],ac='Tümü',savedImgs=Object.assign({},EMBEDDED_IMGS),targetKey='';
-P.forEach(p=>sv[p.id]=p.v.length>1?1:0);
-function updateCounter(){document.getElementById('imgCounter').innerText='Yüklenen: '+Object.keys(savedImgs).length}
-document.getElementById('img-banner1').src=savedImgs.banner1||makeSvg("Diyarbakır Şubemiz");
-document.getElementById('img-banner2').src=savedImgs.banner2||makeSvg("Taze Yöresel Ürünler");
-updateCounter();
-function exitAdmin(){document.body.classList.remove('admin-mode');window.history.replaceState({},document.title,window.location.pathname)}
-function pickImg(key){if(!document.body.classList.contains('admin-mode'))return;targetKey=key;document.getElementById('imgPicker').value='';document.getElementById('imgPicker').click()}
-document.getElementById('imgPicker').addEventListener('change',function(e){
-const f=e.target.files[0];if(!f)return;
-const r=new FileReader();
-r.onload=function(ev){
-const img=new Image();
-img.onload=function(){
-const c=document.createElement('canvas'),m=targetKey.startsWith('banner')?1000:650;let w=img.width,h=img.height;
-if(w>m){h=Math.round(h*m/w);w=m}
-c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);
-const data=c.toDataURL('image/jpeg',0.85);
-savedImgs[targetKey]=data;
-updateCounter();
-if(targetKey.startsWith('banner')){document.getElementById('img-'+targetKey).src=data}else{rp()}
-};img.src=ev.target.result;
-};r.readAsDataURL(f);
-});
-function exportSite(){
-document.body.classList.remove('admin-mode');
-document.getElementById('pg').innerHTML='';
-document.getElementById('ci').innerHTML='';
-let html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
-html=html.replace(/let EMBEDDED_IMGS = \{[\s\S]*?\};/, "let EMBEDDED_IMGS = "+JSON.stringify(savedImgs)+";");
-const a=document.createElement('a');
-a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
-a.download='index.html';a.click();
-document.body.classList.add('admin-mode');
-rp();
-}
-function rp(){
-const g=document.getElementById('pg'),s=document.getElementById('si').value.toLowerCase().trim();
-g.innerHTML='';
-P.filter(p=>(ac==='Tümü'||(ac==='Favoriler'&&p.f)||p.c===ac)&&(p.n.toLowerCase().includes(s)||p.c.toLowerCase().includes(s))).forEach(p=>{
-const vi=sv[p.id]||0,cv=p.v[vi];
-const imgSrc=savedImgs['p'+p.id]||makeSvg(p.c);
-const vh=p.v.map((x,i)=>`<button class="vb ${i===vi?'sel':''}" onclick="sv[${p.id}]=${i};rp()">${x.l}</button>`).join('');
-g.innerHTML+=`<div class="pc"><span class="ct">${p.c}</span>${p.f?'<span class="fb">⭐ Favori</span>':''}<div class="pi"><button class="up-btn" onclick="pickImg('p${p.id}')">📷 HD Fotoğraf Seç</button><img src="${imgSrc}"></div><div class="pb"><div><div class="pt">${p.n}</div><div class="vg">${vh}</div></div><div class="pf"><span class="pr">${cv.p} TL</span><button class="ac" onclick="atc(${p.id})">+ Sepete Ekle</button></div></div></div>`;
-});
-}
-function fc(c,b){ac=c;document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('ct').innerText=c==='Tümü'?'Tüm Ürünlerimiz':c;rp()}
-document.getElementById('si').addEventListener('input',rp);
-function atc(id){const p=P.find(x=>x.id===id),v=p.v[sv[id]||0],k=id+'-'+v.l,e=cart.find(x=>x.k===k);e?e.q++:cart.push({k,n:p.n,v:v.l,p:v.p,q:1});uc()}
-function cq(k,d){const i=cart.findIndex(x=>x.k===k);if(i>-1){cart[i].q+=d;if(cart[i].q<=0)cart.splice(i,1)}uc()}
-function uc(){
-document.getElementById('cc').innerText=cart.reduce((s,i)=>s+i.q,0);
-document.getElementById('ctot').innerText=cart.reduce((s,i)=>s+i.p*i.q,0)+' TL';
-document.getElementById('ci').innerHTML=cart.length?cart.map(i=>`<div class="cit"><div><strong>${i.n}</strong><br><small>${i.v} • ${i.p} TL</small></div><div><button onclick="cq('${i.k}',-1)" style="width:26px;height:26px">-</button> <b>${i.q}</b> <button onclick="cq('${i.k}',1)" style="width:26px;height:26px">+</button></div></div>`).join(''):'<p style="text-align:center;color:#888;margin-top:30px">Sepetiniz boş.</p>';
-}
-function tc(){document.getElementById('co').classList.toggle('open')}
-function cwa(){
-if(!cart.length)return alert('Sepetiniz boş.');
-let m="Merhaba *ADEM BAHARAT*, sipariş vermek istiyorum:\n\n",t=0;
-cart.forEach((i,x)=>{let st=i.p*i.q;t+=st;m+=`${x+1}. *${i.n}* (${i.v}) x ${i.q} Adet = *${st} TL*\n`});
-m+=`\n*Toplam: ${t} TL*`;
-const a=document.getElementById('ca').value.trim();if(a)m+=`\n*Adres:* ${a}`;
-window.location.href="https://whatsapp.com"+encodeURIComponent(m);
-}
-rp();
-</script>
-</body>
-</html>
+
+<div class="promo-bar">🌿 3 NESİLDİR ARADIĞINIZ DOĞAL LEZZET • DİYARBAKIR DİCLEKENT BULVARI • WHATSAPP SİPARİŞ: 0533 138 58 96</div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-title">ADEM BAHARAT</span>
